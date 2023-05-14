@@ -1,0 +1,1351 @@
+* {
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Castoro Titling", cursive;
+}
+
+/*! Navbar */
+nav {
+    position: fixed;
+    width: 100%;
+}
+
+.nav-item {
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.dropdown {
+    position: relative;
+    cursor: pointer;
+}
+
+.dropdown:hover .dropdown-menu {
+    opacity: 1;
+    visibility: visible;
+}
+
+.dropdown-menu a {
+    font-size: 14px;
+    padding: 12px 20px;
+}
+
+.dropdown-menu a:hover {
+    background: #d9be26;
+    color: #fff;
+}
+
+.dropdown-menu {
+    position: absolute;
+    top: 60px;
+    right: -20px;
+    display: grid;
+    width: 180px;
+    padding: 8px 0;
+    background: #ffff;
+    border-radius: 10px;
+    border: 1px solid #a95534 !important;
+    box-shadow: 0 40px 40px rgb (0 0 0 / 6%);
+    opacity: 0;
+    visibility: hidden;
+    transition: 0.25s;
+}
+
+.dropdown-menu::before {
+    content: "";
+    background: inherit;
+    border-top: 1px solid #a95534;
+    border-right: 1px solid #a95534;
+    position: absolute;
+    top: -7px;
+    left: 22px;
+    width: 12px;
+    height: 12px;
+    rotate: -45deg;
+}
+
+.navbar {
+    position: fixed;
+    top: 0%;
+    z-index: 9999;
+    transition: all 0.3s ease-in-out;
+}
+
+.navbar.scrolled {
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 5px 0;
+}
+
+.navbar-collapse {
+    transition: all 0.5s ease-in-out;
+}
+
+.navbar-nav .nav-link {
+    transition: all 0.3s ease-in-out;
+}
+
+.dropdown-menu {
+    background-color: #fff;
+    border: none;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.dropdown-menu a {
+    transition: all 0.3s ease-in-out;
+}
+
+.btn-outline-success {
+    transition: all 0.3s ease-in-out;
+}
+
+.btn-outline-success.scrolled {
+    background-color: #5cb85c;
+    color: #fff !important;
+}
+
+/*! Navbar ends*/
+
+/*! Main */
+
+/* Slider section */
+p {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+        Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+}
+
+.curved-div {
+    margin-top: 1rem;
+    position: relative;
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: #fff;
+    text-align: center;
+    overflow: hidden;
+}
+
+.curved-div::before {
+    background-color: rgba(171, 117, 23, 0.25);
+}
+
+.curved-div svg {
+    display: block;
+}
+
+.curved-div.upper {
+    background: #fff;
+}
+
+.curved-div h1 {
+    font-size: 5rem;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+        Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+    margin-top: 0rem;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: #000;
+}
+
+.curved-div p {
+    font-size: 1.5rem;
+    color: #fff;
+    padding: 0 10rem !important;
+    -webkit-text-stroke-width: 0.5px;
+    -webkit-text-stroke-color: #000;
+}
+
+/* Slider ends */
+
+/* Partner section */
+.partner {
+    position: relative;
+    margin-top: -80px;
+}
+
+/* Partner section ends */
+
+/* about section */
+
+.about {
+    overflow: hidden;
+    position: relative;
+    height: 700px;
+}
+
+.about-left {
+    float: left;
+    width: 50%;
+    padding-left: 100px;
+    padding-top: 100px;
+    height: 500px;
+}
+
+.about-right {
+    float: left;
+    width: 50%;
+    padding-right: 100px;
+    padding-top: 200px;
+    text-align: center;
+    height: 500px;
+}
+
+.about h2 {
+    font-weight: bolder;
+}
+
+.about hr {
+    height: 3px;
+}
+
+.count {
+    background-color: #d9be26;
+    z-index: 1;
+}
+
+.about .overlap {
+    position: absolute;
+    z-index: 10;
+    top: 50%;
+    left: 24%;
+    margin-bottom: 5rem;
+}
+
+.overlap img {
+    border-radius: 10px;
+}
+
+/* about section ends */
+
+/* course section */
+.courses .card {
+    border-radius: 15px;
+    border: none;
+    box-shadow: rgba(169, 85, 52, 0.3) 0px 6px 15px;
+}
+
+.courses h2 {
+    font-family: "Castoro Titling", cursive;
+    text-align: center;
+    font-weight: bold;
+}
+
+.courses h5 {
+    font-weight: bold;
+}
+
+.btn-course:hover {
+    background-color: #a95534;
+    color: white;
+}
+
+.btn-course {
+    width: 100%;
+    text-align: left;
+    padding-right: 20px;
+    border: 2px solid #a95534;
+    background-color: white;
+    color: black;
+    cursor: pointer;
+}
+
+.btn-course i {
+    float: right;
+}
+
+/* course section ends */
+
+/* course info section */
+.course-chart {
+    position: relative;
+    margin-top: 6rem;
+    position: relative;
+    z-index: 1;
+}
+
+.course-skill {
+    margin-top: 10rem;
+}
+
+.course-time {
+    border-radius: 10px;
+    position: absolute;
+    top: 13%;
+    z-index: 5;
+    background-color: #fff;
+}
+
+.course-time .card {
+    border-radius: 15px;
+}
+
+.course-info h2,
+h4 {
+    font-weight: bold;
+}
+
+.course-info h4 {
+    font-size: 20px;
+}
+
+.course-info p,
+.course-tutor p {
+    font-size: 14px;
+    color: rgb(110, 109, 109);
+}
+
+.w-60 {
+    width: 60%;
+}
+
+.vl {
+    border-left: 6px solid #d9be26;
+    border-radius: 10px;
+}
+
+.vl-2 {
+    border-left: 6px solid #a95534;
+    border-radius: 10px;
+}
+
+.time h3 {
+    color: rgb(110, 109, 109);
+    font-size: 20px;
+}
+
+.time h5,
+.course-tutor h5 {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+        Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+    font-weight: 400;
+    font-size: 18px;
+}
+
+.course-tutor {
+    position: absolute;
+    top: 65%;
+    left: 15%;
+    background-color: #fff;
+    border-radius: 10px;
+    z-index: 5;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.w-40 {
+    width: 40% !important;
+}
+
+.active-status {
+    display: inline-block;
+    background-color: rgb(0, 158, 0);
+    color: #fff;
+    padding: 3px 8px;
+    border-radius: 20px;
+    font-weight: 400;
+    margin-bottom: 10px;
+}
+
+.profile-picture img {
+    display: flex;
+    justify-content: center;
+    border-radius: 50%;
+}
+
+.profile-details {
+    text-align: center;
+}
+
+.rating {
+    display: inline-block;
+    font-size: 14px;
+    vertical-align: middle;
+}
+
+.stars {
+    color: #ffc107;
+}
+
+.fa-star {
+    margin-right: 5px;
+}
+
+.checked {
+    color: #ff9800;
+}
+
+.reviews {
+    display: inline-block;
+    margin-left: 10px;
+    vertical-align: middle;
+    font-size: 12px;
+}
+
+.course-piechart {
+    position: absolute;
+    top: 0;
+    left: 57%;
+    background-color: #fff;
+    z-index: 2;
+    overflow: scroll;
+    height: 80%;
+}
+
+/* piechart */
+.pie {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.pie-wrap {
+    overflow: hidden;
+    border: 2px solid lightgrey;
+    width: 400px;
+    height: 250px;
+    margin: 5px;
+    position: relative;
+    border-radius: 50%;
+    color: black;
+}
+.pie-wrap .entry {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/* *the individual entries* */
+
+.sky-blue {
+    background-color: lightskyblue;
+    height: 50%;
+    width: 50%;
+    display: block;
+}
+
+.light-yellow {
+    background-color: lightyellow;
+    height: 50%;
+    width: 50%;
+}
+.pink {
+    background-color: pink;
+    height: 50%;
+    position: absolute;
+    top: 0px;
+    right: 0;
+    width: 50%;
+    clip-path: polygon(0 0, 100% 0%, 0% 100%);
+}
+
+.purple {
+    background-color: purple;
+    height: 50%;
+    width: 50%;
+    right: 0;
+    top: 0;
+    position: absolute;
+    clip-path: polygon(0% 100%, 100% 0%, 100% 100%);
+}
+
+.green {
+    background-color: limegreen;
+    height: 50%;
+    width: 50%;
+    right: 0;
+    top: 50%;
+    position: absolute;
+    clip-path: polygon(0% 0%, 100% 0%, 100% 100%);
+}
+
+.wheat {
+    background-color: wheat;
+    height: 50%;
+    width: 50%;
+    right: 0;
+    top: 50%;
+    position: absolute;
+    clip-path: polygon(0% 0%, 100% 100%, 0% 100%);
+}
+.pie-wrap .purple p {
+    position: absolute;
+    top: 140px;
+    color: white;
+}
+.pie-wrap .purple p:first-child {
+    top: 120px;
+}
+
+.pie-wrap .green p {
+    position: absolute;
+    top: 20px;
+}
+
+.pie-wrap .green p:first-child {
+    top: 0px;
+}
+
+.pie-wrap .pink p,
+.pie-wrap .wheat p {
+    position: absolute;
+    left: 20px;
+    top: 80px;
+}
+
+.pie-wrap .pink,
+.pie-wrap .wheat {
+    justify-content: flex-start;
+}
+
+.pie-wrap .pink p:first-child,
+.pie-wrap .wheat p:first-child {
+    top: 100px;
+}
+.entry .entry-value {
+    display: none;
+    transition: all 500ms linear;
+}
+.entry:hover .entry-value {
+    display: block;
+}
+.entry {
+    transition: all 500ms linear;
+}
+.entry:hover {
+    filter: invert();
+}
+
+/* piechart ends */
+
+ul {
+    padding-left: 3.5Frem;
+    list-style-type: decimal;
+}
+
+.list li {
+    padding-left: 1rem;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+        Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+}
+
+.course-tutor:hover,
+.course-time:hover {
+    box-shadow: rgba(169, 85, 52, 0.6) 0px 6px 15px !important;
+}
+.course-piechart:hover {
+    box-shadow: rgba(169, 85, 52, 0.6) 0px 6px 15px !important;
+    z-index: 999;
+}
+
+/* course info section ends */
+
+/* instructor section */
+.tutor {
+    text-align: center;
+    margin-top: 8rem;
+}
+
+.tutor h2 {
+    font-weight: bold;
+}
+
+.tutor .card-body h5 {
+    font-weight: bold;
+}
+
+.card:hover {
+    box-shadow: 0 0 15px #a95534;
+}
+
+.card {
+    position: relative;
+    transition: all 0.2s ease-in-out;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+}
+
+.card img {
+    max-width: 100%;
+    height: auto;
+}
+
+.card .card-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #fff;
+    border-top: none;
+    padding: 10px 20px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
+.card .card-footer i {
+    font-size: 24px;
+    color: #999;
+    margin-right: 15px;
+    transition: all 0.2s ease-in-out;
+}
+
+.card .card-footer i:hover {
+    color: #333;
+}
+
+@media screen and (max-width: 768px) {
+}
+
+/* instructor section ends */
+
+/* testimonial section */
+.testi {
+    position: relative;
+}
+
+.testimonial {
+    overflow: hidden;
+    background-image: linear-gradient(
+        to bottom,
+        #a95534,
+        #a95534 50%,
+        #494b46 50%,
+        #494b46
+    );
+    /* Set the background image using a linear gradient */
+}
+
+.testi-left {
+    float: left;
+    width: 70%;
+    background-color: #d9be26;
+    color: #fff;
+    padding-right: 15rem;
+}
+
+.mySlides {
+    display: none;
+}
+
+/* Next & previous buttons */
+.prev,
+.next {
+    cursor: pointer;
+    width: auto;
+    margin-top: -30px;
+    padding: 16px;
+    color: #a95534;
+    font-weight: bold;
+    font-size: 20px;
+    border-radius: 3px 3px 3px 3px;
+    user-select: none;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover,
+.next:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+    color: white;
+}
+
+/* The dots/bullets/indicators */
+.dot {
+    cursor: pointer;
+    height: 15px;
+    width: 15px;
+    margin: 0 2px;
+    background-color: #a95534;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.6s ease;
+}
+
+/* Add a background color to the active dot/circle */
+.active,
+.dot:hover {
+    background-color: #717171;
+}
+
+.testi-img {
+    position: absolute;
+    top: 30%;
+    left: 65%;
+    z-index: 5;
+    border-radius: 30px;
+}
+
+.testi-img img {
+    border-radius: 20px;
+}
+
+.semicircle {
+    position: absolute;
+    top: 95%;
+    left: 67%;
+    transform: translate(-50%, -50%);
+    height: 200px;
+    border-radius: 200px 200px 0 0;
+    background-color: #a95534;
+    z-index: 4;
+}
+
+/* testimonial section ends */
+
+/*  Join the list section */
+.join-list {
+    margin-top: 10rem;
+    padding: 50px 0;
+    z-index: 10;
+}
+
+.w-40 {
+    width: 30%;
+}
+
+.join-list__heading {
+    font-size: 1rem;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+.join-list__description {
+    font-size: 1rem;
+    margin-bottom: 10px;
+}
+
+.join-list__form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.join-list__input {
+    padding: 5px;
+    border-radius: 5px #999;
+    font-size: 1rem;
+    margin-right: 10px;
+    flex-grow: 1;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+        Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+}
+
+.join-list__button {
+    background-color: #a95534;
+    color: #fff;
+    padding: 6px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.6s ease-in-out;
+}
+
+.join-list__button:hover {
+    background-color: #d9be26;
+}
+
+/*  Join the list section ends */
+
+/*! Main ends */
+
+/* footer */
+#foot {
+    width: 100%;
+    height: auto;
+    position: relative;
+    background: #a95534;
+    margin-top: 110px;
+    z-index: 1;
+    margin-top: 12rem;
+}
+
+#foot::before {
+    content: "";
+    width: 50%;
+    height: 108px;
+    position: absolute;
+    top: -54px;
+    left: 0;
+    background: #a95534;
+    transform: skewY(8deg);
+    z-index: -1;
+}
+
+#foot::after {
+    content: "";
+    width: 54%;
+    height: 115px;
+    position: absolute;
+    top: -55px;
+    right: 0;
+    background: #a95534;
+    transform: skewY(-8deg);
+    z-index: -1;
+}
+
+footer {
+    /* padding: 50px 0; */
+    text-align: center;
+    color: #fff;
+}
+
+footer .container {
+    /* max-width: 1200px; */
+    margin: 0 auto;
+}
+
+footer .footer-logo img {
+    max-width: 100%;
+    height: auto;
+}
+
+footer .footer-links ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+footer .footer-links li {
+    /* display: inline-block; */
+    margin: 0 10px;
+}
+
+footer .footer-links a {
+    text-decoration: none;
+    color: #fff;
+}
+
+footer .follow-us {
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+footer .follow-us ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+footer .follow-us li {
+    display: inline-block;
+    margin: 0 13px;
+    font-size: 20px;
+}
+
+footer .copyright {
+    text-align: center;
+    font-size: 12px;
+}
+
+footer hr {
+    border: 0;
+    height: 1px;
+}
+
+.fab:hover {
+    color: #d9be26 !important;
+}
+
+/* footer ends */
+
+/* responsive */
+@media screen and (max-width: 992px) {
+    .partner {
+        margin-top: -50px;
+    }
+
+    .about .overlap {
+        top: 55%;
+        left: 17%;
+        z-index: 10;
+    }
+
+    .resp {
+        margin-bottom: 10px !important;
+    }
+
+    .course-skill .btn {
+        font-size: 12px;
+        padding: 3px 6px;
+    }
+
+    .course-skill i {
+        padding-top: 2px !important;
+    }
+
+    .course-time {
+        margin: 0;
+        padding: 0;
+        top: 8%;
+        left: 0%;
+    }
+
+    .course-time h4 {
+        font-size: 14px;
+    }
+
+    .course-time p {
+        font-size: 10px !important;
+    }
+
+    .c-card-time h3 {
+        font-size: 10px;
+    }
+
+    .vl {
+        border-left: 3px solid #d9be26;
+        border-radius: 5px;
+    }
+
+    .vl-2 {
+        border-left: 3px solid #a95534;
+        border-radius: 5px;
+    }
+
+    .time h5 {
+        font-size: 12px;
+    }
+
+    .course-tutor {
+        width: 60%;
+        top: 79%;
+        left: 7%;
+    }
+
+    .active-status span {
+        font-size: 8px !important;
+        padding: 2px;
+    }
+
+    .profile-picture {
+        padding-left: 50%;
+    }
+
+    .mb-2,
+    .mb-4 {
+        margin: 0 !important;
+    }
+
+    .px-3 {
+        padding: 0 !important;
+    }
+
+    .profile-details h5 {
+        font-size: 15px;
+    }
+
+    .profile-details p {
+        font-size: 10px;
+    }
+
+    .profile-details span {
+        margin: 0;
+        font-size: 10px;
+    }
+
+    .course-piechart {
+        top: 0%;
+        left: 57%;
+    }
+
+    .course-piechart h4 {
+        margin: 0 !important;
+        font-size: 13px;
+    }
+
+    .tutor {
+        margin-top: 9rem;
+    }
+
+    .testi-img {
+        top: 44%;
+        left: 62%;
+    }
+
+    .testi-img img {
+        width: 330px;
+        height: 470px;
+    }
+
+    .semicircle {
+        height: 120px;
+    }
+
+    .w-40 {
+        width: 45%;
+    }
+
+    .join-list__heading {
+        font-size: 1.2rem;
+    }
+
+    .join-list__description {
+        font-size: 0.8rem;
+    }
+
+    .join-list__input {
+        font-size: 0.8rem;
+    }
+
+    .join-list {
+        padding: 30px 0;
+    }
+
+    .join-list__button {
+        font-size: 0.8rem;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .course-info {
+        padding: 0;
+    }
+
+    .course-time {
+        width: 65%;
+        top: 10%;
+        left: 0%;
+    }
+
+    .course-time h4 {
+        font-size: 18px;
+    }
+
+    .course-time p {
+        font-size: 14px !important;
+    }
+
+    .c-card-time h3 {
+        font-size: 14px;
+    }
+
+    .vl {
+        border-left: 5px solid #d9be26;
+        border-radius: 7px;
+    }
+
+    .vl-2 {
+        border-left: 5px solid #a95534;
+        border-radius: 7px;
+    }
+
+    .time h5 {
+        font-size: 16px;
+    }
+
+    .course-piechart {
+        left: 57%;
+        width: 40% !important;
+    }
+
+    .course-tutor {
+        top: 97% !important;
+    }
+
+    .tutor {
+        margin-top: 15rem;
+    }
+
+    .testi-img {
+        top: 44%;
+        left: 55%;
+    }
+
+    .testi-img img {
+        width: 290px;
+        height: 440px;
+    }
+
+    .semicircle {
+        height: 100px;
+        left: 60%;
+    }
+}
+
+@media screen and (max-width: 664px) {
+    .curved-div p {
+        padding: 2rem !important;
+    }
+
+    .partner {
+        margin-top: -30px;
+    }
+    .justify-content-between {
+        width: 50%;
+        margin: 0 auto;
+    }
+
+    .about-left {
+        padding-left: 50px;
+        padding-top: 70px;
+    }
+
+    .about-right {
+        padding-right: 50px;
+        padding-top: 140px;
+    }
+
+    .about .overlap {
+        top: 63%;
+        left: 20%;
+    }
+
+    .course-chart {
+        width: 80%;
+    }
+
+    .course-tutor {
+        top: 70% !important;
+    }
+
+    .course-piechart {
+        left: 63%;
+    }
+
+    .tutor {
+        margin-top: 7rem;
+    }
+
+    .tutor {
+        margin-top: 15rem;
+    }
+
+    .testi-left {
+        padding-right: 0 !important;
+    }
+
+    .testi-left .container {
+        padding: 0 !important;
+    }
+
+    .testi-left h2 {
+        padding: 0 !important;
+    }
+
+    .mySlides {
+        padding-left: 0 !important;
+        padding-right: 5rem !important;
+    }
+
+    .testi-img {
+        top: 50%;
+        left: 60%;
+    }
+
+    .testi-img img {
+        width: 210px;
+        height: 360px;
+    }
+
+    .semicircle {
+        top: 100%;
+        height: 80px;
+        left: 57%;
+    }
+
+    .res {
+        margin: 15px 0;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .about-left,
+    .about-right {
+        width: 100%;
+        height: auto;
+    }
+
+    .about-left .p-bottom {
+        margin-bottom: 7rem;
+    }
+
+    .about-row div {
+        width: 25%;
+    }
+
+    .about-row {
+        display: flex !important;
+        justify-content: center !important;
+        margin-bottom: 3rem;
+    }
+
+    .about .overlap {
+        top: 47%;
+    }
+
+    /* .course-info{
+    padding-left: 1rem !important;
+  }
+  .time{
+    overflow: hidden;
+  }
+  .c-card-time{
+    float: left;
+    width: 30%;
+  }
+  .c-card-hr{
+    float: left;
+    width: 20%;
+  }
+  .c-card-class{
+    float: left;
+    width: 50%;
+  }
+
+  .course-skill{
+    margin-top: 5rem;
+  }
+  .course-chart{
+    margin-top: 3rem;
+  }
+
+  .course-time{
+    font-size: 10px;
+  }
+  .course-tutor{
+    top: 85% !important;
+  }
+
+  .course-piechart{
+    width: 57% !important;
+    font-size: 12px;
+  }
+  ul{
+    padding-left: 2rem;
+  }
+  .list li{
+    padding-left: 0;
+  } */
+
+    .course-chart {
+        position: static;
+        margin-top: 0 !important;
+    }
+    /* 
+  .course-chart svg {
+    visibility: hidden
+  } */
+
+    .course-time {
+        position: static;
+        width: 100% !important;
+        margin-top: 0 !important;
+    }
+
+    .time {
+        overflow: hidden;
+    }
+
+    .c-card-time {
+        float: left;
+        width: 30%;
+    }
+
+    .c-card-hr {
+        float: left;
+        width: 20%;
+    }
+
+    .c-card-class {
+        float: left;
+        width: 50%;
+    }
+
+    .course-tutor {
+        position: static;
+        width: 100% !important;
+        margin: 3rem 0;
+    }
+
+    .course-piechart {
+        position: static;
+        width: 100% !important;
+        height: 300px;
+    }
+
+    svg {
+        height: 15px !important;
+        visibility: hidden;
+    }
+
+    .testi-left {
+        width: 100%;
+    }
+
+    .semicircle {
+        visibility: hidden;
+    }
+
+    .testi-img {
+        visibility: hidden;
+    }
+
+    .join-list {
+        margin-top: 3rem;
+    }
+
+    .join-list__heading {
+        padding: 0 !important;
+    }
+
+    .join-list__description {
+        padding-left: 0 !important;
+    }
+
+    .join-list__form {
+        padding-left: 20px !important;
+    }
+
+    .tutor {
+        margin-top: 7rem;
+    }
+}
+
+/* CSS code for the gallery */
+.gallery-container {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+}
+
+.gallery-inner {
+    display: flex;
+    transition: transform 0.3s ease-in-out;
+}
+
+.gallery-item {
+    flex: 0 0 33.3333%; /* Change this value to adjust the number of images shown */
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+.gallery-item img {
+    width: 100%;
+    height: auto;
+}
+
+.gallery-prev,
+.gallery-next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    padding: 10px;
+    font-size: 24px;
+    font-weight: bold;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}
+
+.gallery-prev {
+    left: 10px;
+}
+
+.gallery-next {
+    right: 10px;
+}
