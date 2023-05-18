@@ -55,32 +55,28 @@
                     <div class="mb-4 about-left">
                         <hr class="w-25 bold">
                         <h2 class="mb-4">About Us</h2>
-                        <p>We are a company that provides high-quality products and services to our customers. Our team
-                            is dedicated to providing the best possible experience to every person we interact with.</p>
-                        <p class="p-bottom">Whether you're a new customer or a long-time client, we strive to make
-                            every interaction with
-                            us a positive one.</p>
+                        @foreach ($abouts as $about)
+                            <p>{{ $about->title }}</p>
+                            <p class="p-bottom">{{ $about->description }}</p>
+                        @endforeach
                     </div>
                     <div class="count about-right">
                         <div class="container">
                             <div class="row about-row">
-                                <div class="col-sm-4 mb-4">
-                                    <h2>10k+</h2>
-                                    <p>Happy customer</p>
-                                </div>
-                                <div class="col-sm-4 mb-4">
-                                    <h2>5k+</h2>
-                                    <p>Trusted company</p>
-                                </div>
-                                <div class="col-sm-4 mb-4">
-                                    <h2>20k+</h2>
-                                    <p>Active engagement</p>
-                                </div>
+                                @foreach ($facts as $fact)
+                                    <div class="col-sm-4 mb-4">
+                                        <h2>{{ $fact->number }}</h2>
+                                        <p>{{ $fact->title }}</p>
+                                    </div>
+                                @endforeach
+
                             </div>
                         </div>
                     </div>
                     <div class="overlap">
-                        <img src="{{ asset('front-assets/img/slider.jpg') }}" class="img-fluid w-75 h-50" alt="img">
+                        @foreach ($abouts as $about)
+                            <img src="{{ asset('uploads/' . $about->img) }}" class="img-fluid w-75 h-50" alt="img">
+                        @endforeach
                     </div>
                 </div>
             </div>
@@ -121,9 +117,10 @@
                                             <p>{{ $course->description2 }}</p>
                                             <hr>
                                             <div class="buy">
-                                                <p class="price w-50 float-start mt-3">${{ $course->price }}</p>
-                                                <a href="{{ '/booking' }}"
+                                                <p class="price w-50 float-start mt-3">Rs {{ $course->price }}/-</p>
+                                                <a href="{{ url('booking') }}?courseID={{ $course->courseID }}&price={{ $course->price }}"
                                                     class="btn btn-outline-success rounded-pill mt-2 w-50 float-end">Buy</a>
+
                                             </div>
                                         </div>
                                     </div>
@@ -316,51 +313,23 @@
                         </div>
                     </div>
                     <div class="row">
-                        <div class="col-md-4">
-                            <div class="card rounded shadow">
-                                <img src="{{ asset('front-assets/img/team/team-1.jpg') }}"
-                                    class=" rounded shadow-img-top" alt="Project 1">
-                                <div class="card-body">
-                                    <h5 class="card-title">John Doe</h5>
-                                    <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                                    <div class="social-icons">
-                                        <a href="#" class="text-dark"><i class="fab fa-facebook"></i></a>
-                                        <a href="#" class="text-dark px-3"><i class="fab fa-twitter"></i></a>
-                                        <a href="#" class="text-dark"><i class="fab fa-instagram"></i></a>
+                        @foreach ($teachers as $teacher)
+                            <div class="col-md-4">
+                                <div class="card rounded shadow">
+                                    <img src="{{ asset('uploads/' . $teacher->img) }}" class=" rounded shadow-img-top"
+                                        alt="Project 1">
+                                    <div class="card-body">
+                                        <h5 class="card-title">{{ $teacher->name }}</h5>
+                                        <p class="card-text">{{ $teacher->post }}</p>
+                                        <div class="social-icons">
+                                            <a href="#" class="text-dark"><i class="fab fa-facebook"></i></a>
+                                            <a href="#" class="text-dark px-3"><i class="fab fa-twitter"></i></a>
+                                            <a href="#" class="text-dark"><i class="fab fa-instagram"></i></a>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="col-md-4">
-                            <div class="card rounded res shadow">
-                                <img src="{{ asset('front-assets/img/team/team-2.jpg') }}" class="card-img-top"
-                                    alt="Project 2">
-                                <div class="card-body">
-                                    <h5 class="card-title">Rosie Fernez</h5>
-                                    <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                                    <div class="social-icons">
-                                        <a href="#" class="text-dark"><i class="fab fa-facebook"></i></a>
-                                        <a href="#" class="text-dark px-3"><i class="fab fa-twitter"></i></a>
-                                        <a href="#" class="text-dark"><i class="fab fa-instagram"></i></a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-4">
-                            <div class="card rounded shadow">
-                                <img src="{{ asset('front-assets/img/team/team-3.jpg') }}" class="card-img-top"
-                                    alt="Project 3">
-                                <div class="card-body">
-                                    <h5 class="card-title">Shawn Jayson</h5>
-                                    <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                                    <div class="social-icons">
-                                        <a href="#" class="text-dark"><i class="fab fa-facebook"></i></a>
-                                        <a href="#" class="text-dark px-3"><i class="fab fa-twitter"></i></a>
-                                        <a href="#" class="text-dark"><i class="fab fa-instagram"></i></a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                        @endforeach
                     </div>
                 </div>
             </div>
@@ -378,71 +347,38 @@
                             <div class="row">
                                 <div class="slideshow-container">
                                     <!-- Full-width slides/quotes -->
-                                    <div class="mySlides p-5">
-                                        <p class="name">Jane Doe</p>
-                                        <div class="stars">
-                                            <i class="fa fa-star checked"></i>
-                                            <i class="fa fa-star checked"></i>
-                                            <i class="fa fa-star checked"></i>
-                                            <i class="fa fa-star checked"></i>
-                                            <i class="fa fa-star checked"></i>
+                                    @foreach ($testimonials as $testimonial)
+                                        <div class="mySlides p-5">
+                                            <div class="profile-picture mb-3">
+                                                <img src="{{ asset('uploads/' . $testimonial->img) }}" width="90"
+                                                    height="90" alt="Profile Picture">
+                                            </div>
+                                            <p class="name">{{ $testimonial->name }}</p>
+                                            <div class="stars">
+                                                @for ($i = 1; $i <= 5; $i++)
+                                                    @if ($i <= $testimonial->star)
+                                                        <i class="fa fa-star "></i>
+                                                    @endif
+                                                @endfor
+                                            </div>
+                                            <p class="role">{{ $testimonial->post }}</p>
+                                            <p class="review">
+                                                {{ $testimonial->description }}</p>
                                         </div>
-                                        <p class="role">Marketing Manager</p>
-                                        <p class="review">Sed vel ex vitae odio pharetra auctor eget vitae dolor. Nam
-                                            in
-                                            ipsum in arcu bibendum sollicitudin eu non nisi. Lorem ipsum dolor sit amet,
-                                            consectetur adipiscing elit.</p>
-                                    </div>
-                                    <div class="mySlides p-5">
-                                        <p class="name">Sunita Bataju</p>
-                                        <div class="stars">
-                                            <i class="fa fa-star checked"></i>
-                                            <i class="fa fa-star checked"></i>
-                                            <i class="fa fa-star checked"></i>
-                                            <i class="fa fa-star"></i>
-                                            <i class="fa fa-star"></i>
-                                        </div>
-                                        <p class="role">Graphic Designer</p>
-                                        <p class="review">Lorem, ipsum dolor sit amet consectetur adipisicing elit.
-                                            Iure ea
-                                            ipsam sit fugiat, voluptas velit quidem provident, exercitationem non
-                                            repellat
-                                            doloribus atque deserunt officia obcaecati aliquid libero illo quam
-                                            molestias at
-                                            quidem delectus molestiae?</p>
-                                    </div>
-                                    <div class="mySlides p-5">
-                                        <p class="name">Aarush Shrestha</p>
-                                        <div class="stars">
-                                            <i class="fa fa-star checked"></i>
-                                            <i class="fa fa-star checked"></i>
-                                            <i class="fa fa-star checked"></i>
-                                            <i class="fa fa-star checked"></i>
-                                            <i class="fa fa-star"></i>
-                                        </div>
-                                        <p class="role">Software Developer</p>
-                                        <p class="review">Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                                            Amet,
-                                            laboriosam quos autem sed architecto animi cum necessitatibus id dolore
-                                            explicabo sint repudiandae rem adipisci, aliquam minus. Praesentium expedita
-                                            minus, aliquam veniam quam assumenda deleniti aperiam ex nostrum laborum
-                                            odit
-                                            vel fuga animi quia nihil itaque exercitationem. Dolorem doloribus labore
-                                            ad.
-                                        </p>
-                                    </div>
-
+                                    @endforeach
                                     <!-- Next/prev buttons -->
                                     <a class="prev" onclick="plusSlides(-1)"><i class="fa-solid fa-arrow-left"></i></a>
                                     <a class="next" onclick="plusSlides(1)"><i class="fa-solid fa-arrow-right"></i></a>
+
                                 </div>
 
                                 <!-- Dots/bullets/indicators -->
                                 <div class="dot-container text-center px-5">
-                                    <span class="dot" onclick="currentSlide(1)"></span>
-                                    <span class="dot" onclick="currentSlide(2)"></span>
-                                    <span class="dot" onclick="currentSlide(3)"></span>
+                                    @foreach ($testimonials as $index => $testimonial)
+                                        <span class="dot" onclick="currentSlide({{ $index + 1 }})"></span>
+                                    @endforeach
                                 </div>
+
                             </div>
                         </div>
                     </div>
@@ -462,8 +398,11 @@
                 <h2 class="join-list__heading">Join the List</h2>
                 <p class="join-list__description">Get the latest updates on new classes, free bootcamps, and more.</p>
                 <div class="join-list__form">
-                    <input type="email" class="join-list__input" placeholder="Enter your email">
-                    <button class="join-list__button">Join</button>
+                    <form action="{{ route('newsletter.store') }}" method="POST" enctype="multipart/form-data">
+                        @csrf
+                        <input name="email" type="email" class="join-list__input" placeholder="Enter your email">
+                        <button class="join-list__button" type="submit" name="submit">Join</button>
+                    </form>
                 </div>
             </div>
         </div>

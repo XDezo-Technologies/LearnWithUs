@@ -48,6 +48,9 @@ class TeachersController extends Controller
                 'field' => 'required',
                 'experience' => 'required',
                 'description' => 'required',
+                'twitter' => 'required',
+                'facebook' => 'required',
+                'linkedIn' => 'required',
             ]
         );
         $teachers->img = $request->img;
@@ -56,6 +59,9 @@ class TeachersController extends Controller
         $teachers->experience = $request->experience;
         $teachers->post = $request->post;
         $teachers->description = $request->description;
+        $teachers->twitter = $request->twitter;
+        $teachers->facebook = $request->facebook;
+        $teachers->linkedIn = $request->linkedIn;
 
         $teachers->save();
         return redirect('admin/teacher')->with('message', 'Your data is submitted ');
@@ -107,6 +113,10 @@ class TeachersController extends Controller
         $teachers->experience = $request->experience;
         $teachers->post = $request->post;
         $teachers->description = $request->description;
+        $teachers->description = $request->description;
+        $teachers->twitter = $request->twitter;
+        $teachers->facebook = $request->facebook;
+        $teachers->linkedIn = $request->linkedIn;
         $teachers->update();
         return redirect('admin/teacher');
     }

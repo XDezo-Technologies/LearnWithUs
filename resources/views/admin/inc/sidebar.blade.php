@@ -265,25 +265,6 @@
                         <a href="#" class="nav-link">
                             <i class="fa fa-address-book" aria-hidden="true"></i>
                             <p>
-                                admission
-                                <i class="fas fa-angle-left right"></i>
-                            </p>
-                        </a>
-                        <ul class="nav nav-treeview">
-                            <li class="nav-item">
-                                <a href="{{ route('admission.index') }}" class="nav-link">
-                                    <i class="fa-solid fa-table"></i>
-                                    <p>Manage</p>
-                                </a>
-                            </li>
-                        </ul>
-                    </li>
-
-
-                    <li class="nav-item has-treeview">
-                        <a href="#" class="nav-link">
-                            <i class="fa fa-address-book" aria-hidden="true"></i>
-                            <p>
                                 About Features
                                 <i class="fas fa-angle-left right"></i>
                             </p>

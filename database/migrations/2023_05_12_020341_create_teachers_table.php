@@ -21,6 +21,9 @@ return new class extends Migration
             $table->string('field');
             $table->string('experience');
             $table->longText('description');
+            $table->string('facebook');
+            $table->string('twitter');
+            $table->string('linkedIn');
             $table->timestamps();
         });
     }

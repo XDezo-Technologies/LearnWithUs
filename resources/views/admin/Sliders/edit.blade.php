@@ -7,13 +7,13 @@
 
                     <div class="pagetitle">
                         <div class="d-flex justify-content-between">
-                            <h1>Edit</h1>
+                            <h1>edit</h1>
                             <a href="{{ route('slider.index') }}" class="btn btn-primary btn-md ">Back</a>
                         </div>
                         <nav>
                             <ol class="breadcrumb">
                                 <li class="breadcrumb-item"><a href="{{ url('/admin') }}">Home</a></li>
-                                <li class="breadcrumb-item active">edit-slider</li>
+                                <li class="breadcrumb-item active">edit-sliders</li>
                             </ol>
                         </nav>
                     </div><!-- End Page Title -->
@@ -84,9 +84,7 @@
                                                                                 width="100px;" style="margin-right:20px;">
                                                                         </label>
                                                                     @endforeach
-                                                                    <div>
-                                                                        {{ $files->links() }}
-                                                                    </div>
+
                                                                 </div>
                                                                 <div class="modal-footer">
                                                                     <button type="button" class="btn btn-secondary"
@@ -109,7 +107,7 @@
                                                 <img src="/uploads/{{ $sliders->img }}" width="120px" height="60px"
                                                     alt="no" class="m-2">
                                                 <div class="input-group mb-3 col">
-                                                    <input id="imagebox" type="text" class="form-control" readonly
+                                                    <input id="imagebox" type="text" class="form-control" disabled
                                                         name="img" readonly value="{{ $sliders->img }}">
                                                     <div class="input-group-append">
                                                         <button type="button" class="btn btn-primary btn-md"

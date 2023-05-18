@@ -19,8 +19,8 @@ class IndexFrController extends Controller
         $sliders = Slider::all();
         $settings = Settings::all();
         $clients = Clients::limit(4)->get();
-        $abouts = Abouts::all();
-        $facts = Facts::all();
+        $abouts = Abouts::limit(1)->get();
+        $facts = Facts::limit(3)->get();
         $courses = Courses::limit(3)->get();
         $teachers = teachers::all();
         $testimonials = Testimonials::all();

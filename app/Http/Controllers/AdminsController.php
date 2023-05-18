@@ -96,7 +96,7 @@ class AdminsController extends Controller
         $admins->password = $request->password;
         $admins->role = $request->role;
         $admins->update();
-        return redirect('admin/admin');
+        return redirect('user-profile');
     }
 
     /**

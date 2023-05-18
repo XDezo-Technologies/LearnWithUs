@@ -61,6 +61,39 @@
                                             </div>
                                             <div class="col-lg-6 col-md-6 col-sm-6">
                                                 <div class="mb-3">
+                                                    <label for="exampleInputEmail1" class="form-label">Twitter</label>
+                                                    <input type="text" class="form-control" id="exampleInputEmail1"
+                                                        aria-describedby="emailHelp" name="twitter"
+                                                        value="{{ $teachers->twitter }}">
+                                                    @error('twitter')
+                                                        <small>{{ $message }}</small>
+                                                    @enderror
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-6 col-md-6 col-sm-6">
+                                                <div class="mb-3">
+                                                    <label for="exampleInputEmail1" class="form-label">Facebook</label>
+                                                    <input type="text" class="form-control" id="exampleInputEmail1"
+                                                        aria-describedby="emailHelp" name="facebook"
+                                                        value="{{ $teachers->facebook }}">
+                                                    @error('facebook')
+                                                        <small>{{ $message }}</small>
+                                                    @enderror
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-6 col-md-6 col-sm-6">
+                                                <div class="mb-3">
+                                                    <label for="exampleInputEmail1" class="form-label">LinkedIn</label>
+                                                    <input type="text" class="form-control" id="exampleInputEmail1"
+                                                        aria-describedby="emailHelp" name="linkedIn"
+                                                        value="{{ $teachers->linkedIn }}">
+                                                    @error('linkedIn')
+                                                        <small>{{ $message }}</small>
+                                                    @enderror
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-6 col-md-6 col-sm-6">
+                                                <div class="mb-3">
                                                     <label for="exampleInputEmail1" class="form-label">Description</label>
                                                     <input type="text" class="form-control" id="exampleInputEmail1"
                                                         aria-describedby="emailHelp" name="description"
@@ -102,7 +135,8 @@
                                                                         photo
                                                                     </h5>
                                                                     <button type="button" class="btn-close"
-                                                                        data-bs-dismiss="modal" aria-label="Close"></button>
+                                                                        data-bs-dismiss="modal"
+                                                                        aria-label="Close"></button>
                                                                 </div>
                                                                 <div class="modal-body">
 

@@ -6,11 +6,15 @@
                 <h2 class="my-5">We Provide Many Type Of Courses</h2>
                 <div class="row mb-5">
                     @foreach ($courses as $course)
-                        <div class="col-md-4">
+                        <div class="col-md-4 mt-3">
                             <div class="card">
                                 <div class="category-top">
-                                    <img src="{{ asset('uploads/' . $course->img) }}"
-                                        class="card-img-top pe-5 w-100 h-70 float-start" alt="...">
+                                    <!-- <img src="{{ asset('uploads/' . $course->img) }}"
+                                                                                                                                                                                                                                        class="card-img-top  w-100 h-70 float-start" alt="..."
+                                                                                                                                                                                                                                        style="max-height: 200px; height: 100%;"> -->
+                                    <div class="course-thumbnail"
+                                        style="background-image: url({{ asset('uploads/' . $course->img) }});">
+                                    </div>
                                     <div class="btn btn-outline-danger rounded-pill w-25 float-end mt-5 me-2 "
                                         id="heartBtn" title="Wishlist" onclick="onAddToCart({{ $course->courseID }})">
                                         <i class="fa-regular fa-heart"></i>
@@ -19,7 +23,7 @@
                                 <div class="card-body">
                                     <h5 class="card-title">{{ $course->title }}</h5>
                                     <p class="card-text mb-5">{{ $course->description }}</p>
-                                    <a href="#" class="btn btn-course rounded-pill" type="button"
+                                    <a href="#" class="btn btn-course rounded-pill " type="button"
                                         data-toggle="collapse" data-target="#collapseExample{{ $course->courseID }}"
                                         aria-expanded="false" aria-controls="collapseExample{{ $course->courseID }}">View
                                         More<i class="fa-solid fa-arrow-down pt-1"></i></a>
@@ -28,9 +32,10 @@
                                             <p>{{ $course->description2 }}</p>
                                             <hr>
                                             <div class="buy">
-                                                <p class="price w-50 float-start mt-3">${{ $course->price }}</p>
-                                                <a href="{{ '/booking' }}"
+                                                <p class="price w-50 float-start mt-3">Rs {{ $course->price }}/-</p>
+                                                <a href="{{ url('booking') }}?courseID={{ $course->courseID }}&price={{ $course->price }}"
                                                     class="btn btn-outline-success rounded-pill mt-2 w-50 float-end">Buy</a>
+
                                             </div>
                                         </div>
                                     </div>
@@ -38,6 +43,9 @@
                             </div>
                         </div>
                     @endforeach
+                    <div>
+                        {{ $courses->links() }}
+                    </div>
                 </div>
             </div>
         </section>

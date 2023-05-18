@@ -41,13 +41,6 @@
                                             </div>
                                             <div class="col-lg-6 col-md-6 col-sm-6">
                                                 <div class="mb-3">
-                                                    <label for="exampleInputEmail1" class="form-label">Introduction</label>
-                                                    <input type="text" class="form-control" id="exampleInputEmail1"
-                                                        aria-describedby="emailHelp" name="introduction">
-                                                </div>
-                                            </div>
-                                            <div class="col-lg-6 col-md-6 col-sm-6">
-                                                <div class="mb-3">
                                                     <!-- Modal trigger button -->
                                                     <!-- Modal Body -->
                                                     <!-- if you want to close by clicking outside the modal, delete the last endpoint:data-bs-backdrop and data-bs-keyboard -->

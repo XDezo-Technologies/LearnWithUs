@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\newsletter;
 use Illuminate\Http\Request;
+use App\Models\Newsletter;
 
 class NewsletterController extends Controller
 {
@@ -15,6 +15,9 @@ class NewsletterController extends Controller
     public function index()
     {
         //
+        $newsletter = new Newsletter;
+        $newsletter = $newsletter->paginate(4);
+        return view('admin.newsletter.index', compact('newsletter'));
     }
 
     /**
@@ -24,6 +27,8 @@ class NewsletterController extends Controller
      */
     public function create()
     {
+        // $newsletter = request()->get('img');
+        return view('admin.newsletter.create', compact('files'));
         //
     }
 
@@ -36,50 +41,75 @@ class NewsletterController extends Controller
     public function store(Request $request)
     {
         //
+        $newsletter = new Newsletter;
+        $validate_data = $request->validate(
+            [
+                'email' => 'required',
+            ]
+        );
+        $newsletter->email = $request->email;
+
+        $newsletter->save();
+        return redirect()->back()->with('success', 'Thank you for joining the newsletter!');
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\newsletter  $newsletter
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show(newsletter $newsletter)
+    public function show($id)
     {
         //
+        $newsletter = new Newsletter;
+        $newsletter = $newsletter->where('id', $id)->First();
+        return view('admin.newsletter.show', compact('newsletter'));
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\newsletter  $newsletter
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit(newsletter $newsletter)
+    public function edit($id)
     {
         //
+        $newsletter = new Newsletter;
+        $newsletter = $newsletter->where('id', $id)->First();
+        return view('admin.newsletter.edit', compact('newsletter'));
     }
 
     /**
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\newsletter  $newsletter
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, newsletter $newsletter)
+    public function update(Request $request, $id)
     {
         //
+        $newsletter = new Newsletter;
+        $newsletter = $newsletter->where('id', $id)->First();
+        $newsletter->email = $request->email;
+        $newsletter->update();
+        return redirect('/');
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\newsletter  $newsletter
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(newsletter $newsletter)
+    public function destroy($id)
     {
         //
+        $newsletter = new Newsletter;
+        $newsletter = $newsletter->where('id', $id)->first();;
+        $newsletter->delete();
+        return redirect('/')->with('message', 'Your data has been deleted');
     }
 }

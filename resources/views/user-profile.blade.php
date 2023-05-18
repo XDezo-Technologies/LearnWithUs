@@ -23,31 +23,35 @@
                     <div class="user-heading mt-2 mb-2">
                         <h3>User Profile</h3>
                     </div>
-                    <form action="#" method="POST" enctype="multipart/form-data">
-                        <div class="row mb-3 w-50 float-start ">
-                            <label for="name" class=" col-form-label">Full Name</label>
+                    @foreach ($users as $user)
+                        <form action="{{ route('updated', $user->id) }}" method="POST" enctype="multipart/form-data">
+                            @csrf
+                            @method('PUT')
+                            <div class="row mb-3 w-50 float-start ">
+                                <label for="name" class=" col-form-label">Full Name</label>
 
-                            <input type="text" class="form-control w-75" name="name" value="">
-                        </div>
-                        <div class="row mb-3 w-50 float-start">
-                            <label for="address" class=" col-form-label">Address</label>
+                                <input type="text" class="form-control w-75" name="name" value="{{ $user->name }}">
+                            </div>
+                            <div class="row mb-3 w-50 float-start">
+                                <label for="address" class=" col-form-label">Address</label>
 
-                            <input name="address" type="text" class="form-control w-75" value="">
-                        </div>
-                        <div class="row mb-3 w-50 float-start">
-                            <label for="phone" class=" col-form-label">Phone no.</label>
+                                <input name="address" type="text" class="form-control w-75" value="{{ $user->address }}">
+                            </div>
+                            <div class="row mb-3 w-50 float-start">
+                                <label for="phone" class=" col-form-label">Phone no.</label>
 
-                            <input name="phone" type="text" class="form-control w-75" value="">
-                        </div>
-                        <div class="row mb-3 w-50 float-start">
-                            <label for="email" class=" col-form-label">Email</label>
+                                <input name="phone" type="text" class="form-control w-75" value="{{ $user->phone }}">
+                            </div>
+                            <div class="row mb-3 w-50 float-start">
+                                <label for="email" class=" col-form-label">Email</label>
 
-                            <input name="email" type="text" class="form-control w-75" value="">
-                        </div>
-                        <div class="w-100 mb-3 float-start">
-                            <button type="submit" class="btn btn-outline-success mt-1" name="submit">Update</button>
-                        </div>
-                    </form>
+                                <input name="email" type="text" class="form-control w-75" value="{{ $user->email }}">
+                            </div>
+                            <div class="w-100 mb-3 float-start">
+                                <button type="submit" class="btn btn-outline-success mt-1" name="submit">Update</button>
+                            </div>
+                        </form>
+                    @endforeach
                 </div>
             </div>
         </div>

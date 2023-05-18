@@ -63,4 +63,111 @@
             </div>
         </div>
     </main>
+    <script>
+        const onAddToCart = (courseID) => {
+            const userID = {{ auth()->id() ?? 'null' }};
+            if (userID === 'null') {
+                return;
+            } else {
+                const csrfToken = document.querySelector('meta[name="csrf-token"]').getAttribute('content');
+
+                fetch("/admin/wishlist", {
+                        method: "POST",
+                        headers: {
+                            'Content-Type': 'application/json',
+                            'X-CSRF-TOKEN': csrfToken
+                        },
+                        body: JSON.stringify({
+                            id: userID,
+                        })
+                    })
+                    .then(res => res.json())
+                    .then(data => {
+                        const cartItems = data.message;
+                        const allHeartBtn = document.querySelectorAll('#heartBtn');
+
+
+                        //check if item is already in cart
+                        let itemFoundOnCart = false;
+                        let item = null;
+
+                        cartItems.forEach((item1, idx) => {
+                            if (courseID.toString() == item1.courseID && userID.toString() == item1
+                                .userID) {
+                                item = item1;
+                                itemFoundOnCart = true;
+                            }
+                        })
+
+                        //if item is already in cart
+                        if (itemFoundOnCart === true) {
+                            allHeartBtn[parseInt(item.courseID) - 1].classList.remove('active');
+
+                            fetch("/admin/wishlist", {
+                                    method: "POST",
+                                    headers: {
+                                        'Content-Type': 'application/json',
+                                        'X-CSRF-TOKEN': csrfToken
+                                    },
+                                    body: JSON.stringify({
+                                        userIdRemoveCart: (userID).toString(),
+                                        courseIdRemoveCart: item.courseID,
+                                    })
+                                })
+                                .then(res => res.json())
+                                .then(data => {
+                                    console.log(data)
+                                })
+                        }
+                        //else add the item to cart
+                        else {
+                            allHeartBtn[parseInt(courseID) - 1].classList.add('active')
+                            fetch('/admin/wishlist', {
+                                    method: 'POST',
+                                    headers: {
+                                        'Content-Type': 'application/json',
+                                        'X-CSRF-TOKEN': csrfToken
+                                    },
+                                    body: JSON.stringify({
+                                        courseID: courseID,
+                                        userID: userID,
+                                    })
+
+                                })
+                                .then(res => res.json())
+                                .then(data => {
+                                    console.log(data)
+                                })
+                        }
+
+                    });
+            }
+        }
+
+        try {
+            const userID = {{ auth()->id() ?? 'null' }};
+            const csrfToken = document.querySelector('meta[name="csrf-token"]').getAttribute('content');
+
+            fetch("/admin/wishlist", {
+                    method: "POST",
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'X-CSRF-TOKEN': csrfToken
+                    },
+                    body: JSON.stringify({
+                        id: userID,
+                    })
+                })
+                .then(res => res.json())
+                .then(data => {
+                    const cartItems = data.message;
+                    const allHeartBtn = document.querySelectorAll('#heartBtn');
+                    cartItems.forEach((item, i) => {
+                        allHeartBtn[parseInt(item.courseID) - 1].classList.add('active');
+                    })
+                })
+        } catch (err) {
+
+        }
+    </script>
 @endsection

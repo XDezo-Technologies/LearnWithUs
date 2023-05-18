@@ -8,7 +8,6 @@
                     <div class="pagetitle">
                         <div class="d-flex justify-content-between">
                             <h1>Show</h1>
-                            <a href="{{ route('slider.index') }}" class="btn btn-primary btn-md ">Back</a>
                         </div>
                         <nav>
                             <ol class="breadcrumb">
@@ -32,7 +31,7 @@
                                                     <label for="exampleInputEmail1" class="form-label">Title</label>
                                                     <input type="text" class="form-control" id="exampleInputEmail1"
                                                         aria-describedby="emailHelp" name="title"
-                                                        value="{{ $sliders->title }}">
+                                                        value="{{ $sliders->title }}" disabled>
                                                     @error('title')
                                                         <small>{{ $message }}</small>
                                                     @enderror
@@ -43,7 +42,7 @@
                                                 <div class="mb-3">
                                                     <label for="exampleFormControlTextarea1"
                                                         class="form-label">Description</label>
-                                                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name='description'>{{ $sliders->description }}</textarea>
+                                                    <textarea class="form-control" disabled id="exampleFormControlTextarea1" rows="3" name='description'>{{ $sliders->description }}</textarea>
                                                     @error('Description')
                                                         <small>{{ $message }}</small>
                                                     @enderror
@@ -105,16 +104,13 @@
                                                 <div class="form-group col-12 mb-0">
                                                     <label class="col-form-label">Image</label>
                                                 </div>
-                                                <img src="/uploads/{{ $sliders->img }}" width="120px" height="60px"
-                                                    alt="no" class="m-2">
+                                                <img src="{{ asset('uploads/' . $sliders->img) }}" width="120px"
+                                                    height="60px" alt="no" class="m-2">
                                                 <div class="input-group mb-3 col">
                                                     <input id="imagebox" type="text" class="form-control" disabled
                                                         name="img" readonly value="{{ $sliders->img }}">
                                                     <div class="input-group-append">
-                                                        <button type="button" class="btn btn-primary btn-md"
-                                                            data-bs-toggle="modal" data-bs-target="#modalId">
-                                                            Choose Image
-                                                        </button>
+
                                                         @error('img')
                                                             <small>{{ $message }}</small>
                                                         @enderror
@@ -122,7 +118,6 @@
                                                 </div>
                                             </div>
                                         </div>
-                                        <button type="submit" class="btn btn-primary" name="submit">Submit</button>
                                     </form>
                                 </div>
                             </div>

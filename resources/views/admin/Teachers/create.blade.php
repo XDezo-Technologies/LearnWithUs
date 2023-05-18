@@ -113,6 +113,27 @@
                                             </div>
                                             <div class="col-lg-6 col-md-6 col-sm-6">
                                                 <div class="mb-3">
+                                                    <label for="exampleInputEmail1" class="form-label">Facebook</label>
+                                                    <input type="text" class="form-control" id="exampleInputEmail1"
+                                                        aria-describedby="emailHelp" name="facebook">
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-6 col-md-6 col-sm-6">
+                                                <div class="mb-3">
+                                                    <label for="exampleInputEmail1" class="form-label">Twitter</label>
+                                                    <input type="text" class="form-control" id="exampleInputEmail1"
+                                                        aria-describedby="emailHelp" name="twitter">
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-6 col-md-6 col-sm-6">
+                                                <div class="mb-3">
+                                                    <label for="exampleInputEmail1" class="form-label">LinkedIn</label>
+                                                    <input type="text" class="form-control" id="exampleInputEmail1"
+                                                        aria-describedby="emailHelp" name="linkedIn">
+                                                </div>
+                                            </div>
+                                            <div class="col-lg-6 col-md-6 col-sm-6">
+                                                <div class="mb-3">
                                                     <label for="exampleFormControlTextarea1"
                                                         class="form-label">Experience</label>
                                                     <input type="text" class="form-control" id="exampleInputEmail1"

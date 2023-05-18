@@ -1,6 +1,7 @@
 @extends('layouts.main')
 @section('content')
     <main>
+
         <div class="container shadow booking p-5 mt-8 w-75 mx-auto">
             <div class="row">
                 <div class="col-md-5 mb-5 booking-left pe-5">
@@ -9,11 +10,11 @@
                     </div>
                     <h3 class="text-center">Summary</h3>
                     <div class="summary">
-                        <p>Course Name</p>
+                        <p>Course ID : {{ request()->query('courseID') }}</p>
                         <hr>
-                        <p>Amount: $19.99</p>
+                        <p>Amount: Rs{{ request()->query('price') }}</p>
                         <hr>
-                        <p class="float-end">Total: $19.99/- </p>
+                        <p class="float-end">Total: Rs {{ request()->query('price') }}/- </p>
                     </div>
                 </div>
                 <div class="col-md-1 bk">
@@ -21,30 +22,39 @@
                 <div class="col-md-6">
                     <div id="booking-right">
                         <h3 class="mb-4">Purchase</h3>
-                        <form action="#">
-                            <div id="form-card" class="form-field">
-                                <label for="cc-number">Cardholder Name</label>
-                                <input id="cc-name" type="name" placeholder="Name on the card" required>
+                        <form action="{{ route('esewa') }}" method="POST" enctype="multipart/form-data">
+                            @csrf
+                            <div id="form-card" class="form-field d-none">
+                                <label for="courseID">Course ID</label>
+                                <input id="courseID" name="courseID" type="text"
+                                    value="{{ request()->query('courseID') }}" readonly>
                             </div>
-                            <div id="form-card" class="form-field">
-                                <label for="cc-number">Card number:</label>
-                                <input id="cc-number" maxlength="19" placeholder="1111 2222 3333 4444" required>
-                            </div>
-
-                            <div id="form-date" class="form-field">
-                                <label for="expiry-month">Expiry date:</label>
-                                <div class="w-50 float-start">
-                                    <input  id="cc-month" maxlength="2" placeholder="Month/Year" required>
-                                </div>
+                            <div id="form-card" class="form-field d-none">
+                                <label for="amount">Amount</label>
+                                <input id="amount" name="amount" type="number" value="{{ request()->query('price') }}"
+                                    readonly>
                             </div>
 
-                            <div id="form-sec-code" class="form-field">
-                                <label for="sec-code">CVV:</label>
-                                <input class="w-50" type="password" maxlength="3" placeholder="123" required>
+                            <div id="form-card" class="form-field d-none">
+                                <label for="userID">User ID</label>
+                                <input id="userID" name="userID" type="text" value="{{ Auth::user()->id }}" readonly>
                             </div>
 
-                            <button class="btn btn-outline-success rounded-pill w-25 mt-4" type="submit">Pay</button>
+                            <div id="form-card" class="form-field d-none">
+                                <label for="name">Name</label>
+                                <input id="name" name="name" type="text" value="{{ Auth::user()->name }}"
+                                    readonly>
+                            </div>
+
+                            <div id="form-card" class="form-field d-none">
+                                <label for="email">Email</label>
+                                <input id="email" name="email" type="email" value="{{ Auth::user()->email }}"
+                                    readonly>
+                            </div>
+
+                            <button class="btn btn-outline-success rounded-pill mt-4" type="submit">Pay with eSewa</button>
                         </form>
+
                     </div>
                 </div>
             </div>
