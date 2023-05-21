@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Abouts;
 use App\Models\AboutsFeatures;
+use App\Models\settings;
 use App\Models\whyChooseUs;
 use Illuminate\Http\Request;
 
@@ -14,6 +15,7 @@ class AboutsFrController extends Controller
         $abouts = Abouts::limit(1)->get();
         $aboutsFeatures = AboutsFeatures::limit(2)->get();
         $whyChooseUs = whyChooseUs::paginate(6);
-        return view('aboutus', compact('abouts', 'aboutsFeatures', 'whyChooseUs'));
+        $settings = settings::all();
+        return view('aboutus', compact('abouts', 'aboutsFeatures', 'whyChooseUs', 'settings'));
     }
 }

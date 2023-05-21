@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Models\Order;
+use App\Models\settings;
+
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 // init composer autoloader.
@@ -53,6 +55,7 @@ class EsewaController extends Controller
         $pid = $_GET['oid'];
         $refId = $_GET['refId'];
         $amount = $_GET['amt'];
+        $settings = settings::all();
 
         $order = Order::where('product_id', $pid)->first();
         //dd($order);
@@ -63,9 +66,10 @@ class EsewaController extends Controller
         if ($update_status) {
             //send mail,....
             //
-            $msg = 'Success';
-            $msg1 = 'Payment success. Thank you for making purchase with us.';
-            return view('thankyou', compact('msg', 'msg1'));
+            $msg = $_GET['amt'];
+            $msg1 =  $_GET['oid'];
+            $currentDate = Carbon::now()->format('F j, Y');
+            return view('payment-success', compact('msg', 'msg1', 'settings', 'currentDate'));
         }
     }
 
@@ -74,6 +78,7 @@ class EsewaController extends Controller
         //do when payment fails.
         $pid = $_GET['pid'];
         $order = Order::where('product_id', $pid)->first();
+        $settings = settings::all();
         //dd($order);
         $update_status = Order::find($order->id)->update([
             'esewa_status' => 'failed',
@@ -84,7 +89,7 @@ class EsewaController extends Controller
             //
             $msg = 'Failed';
             $msg1 = 'Payment is failed. Contact admin for support.';
-            return view('thankyou', compact('msg', 'msg1'));
+            return view('payment-failed', compact('msg', 'msg1', 'settings'));
         }
     }
 }

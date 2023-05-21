@@ -54,7 +54,7 @@ class SettingsController extends Controller
         $settings->siteValue = $request->siteValue;
 
         $settings->save();
-        return redirect('admin/settings')->with('message', 'Your data is submitted ');
+        return redirect('admin/setting')->with('message', 'Your data is submitted ');
     }
 
     /**
@@ -102,7 +102,7 @@ class SettingsController extends Controller
         $settings->siteKey = $request->siteKey;
         $settings->siteValue = $request->siteValue;
         $settings->update();
-        return redirect('admin/settings');
+        return redirect('admin/setting');
     }
 
     /**
@@ -117,6 +117,6 @@ class SettingsController extends Controller
         $settings = new Settings;
         $settings = $settings->where('id', $id)->first();;
         $settings->delete();
-        return redirect('admin/settings')->with('message', 'Your data has been deleted');
+        return redirect('admin/setting')->with('message', 'Your data has been deleted');
     }
 }

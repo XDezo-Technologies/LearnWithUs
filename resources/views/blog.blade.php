@@ -6,7 +6,11 @@
             <h1>Our Latest News and Blog</h1>
             <p>Your Searched data result</p>
         </div>
-
+        <section class="w-25 mx-auto paginate">
+            <div aria-label="Page navigation example">
+                {{ $blogs->links() }}
+            </div>
+        </section>
         <div class="blogs">
 
             <div class="container ms-2 w-75 p-5">
@@ -40,23 +44,16 @@
 
                 <div class="right-content">
                     <h3>Most Popular Posts</h3>
-
-                    <div class="cardl">
-                        <img src="{{ asset('front-assets/img/blog4.jpg') }}" alt="">
-                        <a href="{{ '/blog-detail' }}">Laravel conditional validation in a simple way</a>
-                    </div>
-                    <div class="cardl">
-                        <img src="{{ asset('front-assets/img/blog4.jpg') }}" alt="">
-                        <a href="{{ '/blog-detail' }}">Positivity is the key</a>
-                    </div>
-                    <div class="cardl">
-                        <img src="{{ asset('front-assets/img/blog4.jpg') }}" alt="">
-                        <a href="{{ '/blog-detail' }}">Git Cheat Sheet for newbie and beginners</a>
-                    </div>
-                    <div class="cardl">
-                        <img src="{{ asset('front-assets/img/blog4.jpg') }}" alt="">
-                        <a href="{{ '/blog-detail' }}">How to Use Facebook As A Powerful Election Tool</a>
-                    </div>
+                    @php $count = 0; @endphp
+                    @foreach ($blogs as $blog)
+                        @if ($count < 5)
+                            <div class="cardl">
+                                <img src="{{ asset('uploads/' . $blog->img) }}" alt="">
+                                <a href="{{ '/blog-detail' }}">{{ $blog->title }}</a>
+                            </div>
+                        @endif
+                        @php $count++; @endphp
+                    @endforeach
                 </div>
             </div>
 

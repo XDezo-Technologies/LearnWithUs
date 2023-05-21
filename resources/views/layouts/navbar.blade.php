@@ -3,8 +3,12 @@
         {{-- Navbar --}}
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
             <div class="container">
-                <a class="navbar-brand" href="#"><img width="70" height="50"
-                        src="{{ asset('front-assets/img/logo.png') }}" alt="Logo"></a>
+                @foreach ($settings as $set)
+                    @if ($set->siteKey == 'Logo')
+                        <a class="navbar-brand" href="#"><img width="70" height="50"
+                                src="{{ asset('uploads/' . $set->siteValue) }}" alt="Logo"></a>
+                    @endif
+                @endforeach
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
                     aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>

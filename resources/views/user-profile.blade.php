@@ -22,7 +22,15 @@
                 <div class="col-md-8 px-3">
                     <div class="user-heading mt-2 mb-2">
                         <h3>User Profile</h3>
+                        @if (session('message') == 'success')
+                            <div class="alert alert-success alert-dismissible fade show" role="alert">
+                                <strong>Successfully</strong> data Updated.
+                                <button type="button" class="btn-close" data-bs-dismiss="alert"
+                                    aria-label="Close"></button>
+                            </div>
+                        @endif
                     </div>
+
                     @foreach ($users as $user)
                         <form action="{{ route('updated', $user->id) }}" method="POST" enctype="multipart/form-data">
                             @csrf
@@ -46,6 +54,18 @@
                                 <label for="email" class=" col-form-label">Email</label>
 
                                 <input name="email" type="text" class="form-control w-75" value="{{ $user->email }}">
+                            </div>
+                            <div class="row mb-3 w-50 float-start d-none">
+                                <label for="role" class=" col-form-label">Role</label>
+
+                                <input name="role" type="text" class="form-control w-75 " value="{{ $user->role }}"
+                                    readonly>
+                            </div>
+                            <div class="row mb-3 w-50 float-start d-none">
+                                <label for="password" class=" col-form-label">Password</label>
+
+                                <input name="password" type="text" class="form-control w-75 "
+                                    value="{{ $user->password }}" readonly>
                             </div>
                             <div class="w-100 mb-3 float-start">
                                 <button type="submit" class="btn btn-outline-success mt-1" name="submit">Update</button>

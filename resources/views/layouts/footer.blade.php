@@ -4,22 +4,35 @@
          <div class="row">
              <div class="col-md-4 mt-3">
                  <div class="footer-logo">
-                     <img src="{{ asset('../front-assets/img/logo.png') }}" width="80" height="90" alt="Logo">
+                     @foreach ($settings as $set)
+                         @if ($set->siteKey == 'Logo')
+                             <img src="{{ asset('uploads/' . $set->siteValue) }}" width="80" height="90"
+                                 alt="Logo">
+                         @endif
+                     @endforeach
                  </div>
              </div>
              <div class="col-md-4 col-sm-6 col-xs-12 mt-3">
                  <div class="footer-links">
                      <p>Our Partners</p>
                      <ul>
-                         <li>
-                             <p>ABC Company</p>
-                         </li>
-                         <li>
-                             <p>XYZ company</p>
-                         </li>
-                         <li>
-                             <p>ABC Company</p>
-                         </li>
+                         @foreach ($settings as $set)
+                             @if ($set->siteKey == 'partner1')
+                                 <li>
+                                     <p>{{ $set->siteValue }}</p>
+                                 </li>
+                             @endif
+                             @if ($set->siteKey == 'partner2')
+                                 <li>
+                                     <p>{{ $set->siteValue }}</p>
+                                 </li>
+                             @endif
+                             @if ($set->siteKey == 'partner3')
+                                 <li>
+                                     <p>{{ $set->siteValue }}</p>
+                                 </li>
+                             @endif
+                         @endforeach
                      </ul>
                  </div>
              </div>
@@ -27,15 +40,23 @@
                  <div class="footer-links">
                      <p>Get In Touch</p>
                      <ul>
-                         <li>
-                             <p>learnwithus@gmail.com</p>
-                         </li>
-                         <li>
-                             <p>601-548637</p>
-                         </li>
-                         <li>
-                             <p>+977 9876543210</p>
-                         </li>
+                         @foreach ($settings as $set)
+                             @if ($set->siteKey == 'partner1')
+                                 <li>
+                                     <a href="mailto:{{ $set->siteValue }}">{{ $set->siteValue }}</a>
+                                 </li>
+                             @endif
+                             @if ($set->siteKey == 'partner2')
+                                 <li>
+                                     <a href="tel:{{ $set->siteValue }}">{{ $set->siteValue }}</a>
+                                 </li>
+                             @endif
+                             @if ($set->siteKey == 'partner3')
+                                 <li>
+                                     <a href="tel:{{ $set->siteValue }}">{{ $set->siteValue }}</a>
+                                 </li>
+                             @endif
+                         @endforeach
                      </ul>
                  </div>
              </div>

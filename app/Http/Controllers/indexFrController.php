@@ -25,6 +25,6 @@ class IndexFrController extends Controller
         $teachers = teachers::all();
         $testimonials = Testimonials::all();
 
-        return view('index', compact('sliders', 'clients', 'abouts', 'facts', 'courses', 'teachers', 'testimonials'));
+        return view('index', compact('sliders', 'clients', 'abouts', 'facts', 'courses', 'teachers', 'testimonials', 'settings'));
     }
 }

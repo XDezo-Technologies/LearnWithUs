@@ -33,20 +33,16 @@
                                             <tr>
                                                 <th scope="col">S.N</th>
                                                 <th scope="col">Name</th>
-                                                <th scope="col">Field</th>
-                                                <th scope="col">Experience</th>
                                                 <th scope="col">Post</th>
                                                 <th scope="col">Image</th>
                                                 <th scope="col">Action</th>
                                             </tr>
                                         </thead>
-                                        <tbody>
+                                        <tbody class="oveflow-hidden">
                                             @foreach ($teachers as $teacher)
                                                 <tr>
                                                     <th scope="row">{{ $loop->iteration }}</th>
                                                     <td>{{ $teacher->name }}</td>
-                                                    <td>{{ $teacher->field }}</td>
-                                                    <td>{{ $teacher->experience }}</td>
                                                     <td>{{ $teacher->post }}</td>
                                                     <td><img src="{{ asset('uploads/' . $teacher->img) }}" width="120px"
                                                             height="100px" alt="no"></td>

@@ -9,12 +9,9 @@
                         <div class="col-md-4 mt-3">
                             <div class="card">
                                 <div class="category-top">
-                                    <!-- <img src="{{ asset('uploads/' . $course->img) }}"
-                                                                                                                                                                                                                                        class="card-img-top  w-100 h-70 float-start" alt="..."
-                                                                                                                                                                                                                                        style="max-height: 200px; height: 100%;"> -->
-                                    <div class="course-thumbnail"
-                                        style="background-image: url({{ asset('uploads/' . $course->img) }});">
-                                    </div>
+                                    <img src="{{ asset('uploads/' . $course->img) }}"class="card-img-top  w-100 h-70 float-start"
+                                        alt="..." style="max-height: 200px; height: 100%;">
+
                                     <div class="btn btn-outline-danger rounded-pill w-25 float-end mt-5 me-2 "
                                         id="heartBtn" title="Wishlist" onclick="onAddToCart({{ $course->courseID }})">
                                         <i class="fa-regular fa-heart"></i>

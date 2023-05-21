@@ -116,7 +116,7 @@ class FilesController extends Controller
     public function destroy($id)
     {
         $files = new Files;
-        $files = $files->where('id', $id)->first();;
+        $files = $files->where('id', $id)->first();
         File::delete(public_path('uploads/' . $files->img));
         $files->delete();
 

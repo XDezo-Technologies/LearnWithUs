@@ -23,6 +23,7 @@ Route::resource('/blogs', 'App\Http\Controllers\blogFrController');
 // Route::resource('/search', 'App\Http\Controllers\searchController');
 Route::resource('/purchased', 'App\Http\Controllers\purchasedController');
 Route::resource('/user-profile', 'App\Http\Controllers\userProfileController');
+Route::resource('/booking', 'App\Http\Controllers\bookingFrController');
 
 Route::get('/course-detail', function () {
     return view('course-detail');
@@ -33,11 +34,11 @@ Route::get('/blog-detail', function () {
 // Route::get('/user-profile', function () {
 //     return view('user-profile');
 // });
-Route::get('/booking', function () {
-    return view('booking');
-});
+// Route::get('/booking', function () {
+//     return view('booking');
+// });
 // Route::resource('/booking', 'App\Http\Controllers\orderController');
-Route::put('update/{id}', [AdminsController::class, 'update'])->name('updated');
+Route::put('update/{id}', [App\Http\Controllers\AdminFrController::class, 'index'])->name('updated');
 Route::post('/esewa', [App\Http\Controllers\EsewaController::class, 'esewaPay'])->name('esewa');
 Route::get('/search', [App\Http\Controllers\searchController::class])->name('search');
 
