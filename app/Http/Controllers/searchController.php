@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Blogs;
+use App\Models\settings;
 use Illuminate\Http\Request;
 
 class searchController extends Controller
@@ -13,6 +14,7 @@ class searchController extends Controller
 
         $blogs = Blogs::where("type", "like", "%" . "$keyword" . "%")->get();
 
-        return view('search', compact('blogs'));
+        $settings = Settings::all();
+        return view('search', compact('blogs', 'settings'));
     }
 }

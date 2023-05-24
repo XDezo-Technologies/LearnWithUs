@@ -178,8 +178,8 @@
                                 <defs>
                                     <linearGradient id="sw-gradient" x1="0" x2="1" y1="1"
                                         y2="0">
-                                        <stop id="stop1" stop-color="rgba(232, 232, 232, 1)" offset="0%"></stop>
-                                        <stop id="stop2" stop-color="rgba(232, 232, 232, 1)" offset="100%"></stop>
+                                        <stop id="stop1" stop-color="#FFC200" offset="0%"></stop>
+                                        <stop id="stop2" stop-color="#FF8A00" offset="100%"></stop>
                                     </linearGradient>
 
                                     <!-- Define pattern for the image -->
@@ -190,12 +190,13 @@
                                     </pattern>
                                 </defs>
 
-                                <!-- Grey background circle -->
+                                <!-- Background circle with gradient -->
                                 <circle cx="50" cy="50" r="55" fill="url(#sw-gradient)" />
 
-                                <!-- Image circle -->
+                                <!-- Image circle with pattern -->
                                 <circle cx="50" cy="50" r="50" fill="url(#image-pattern)" />
                             </svg>
+
 
 
 

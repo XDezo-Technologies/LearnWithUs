@@ -20,27 +20,16 @@ Route::resource('/newsletter', 'App\Http\Controllers\NewsletterController');
 Route::resource('/aboutus', 'App\Http\Controllers\AboutsFrController');
 Route::resource('/instructor', 'App\Http\Controllers\instructorFrController');
 Route::resource('/blogs', 'App\Http\Controllers\blogFrController');
-// Route::resource('/search', 'App\Http\Controllers\searchController');
 Route::resource('/purchased', 'App\Http\Controllers\purchasedController');
 Route::resource('/user-profile', 'App\Http\Controllers\userProfileController');
 Route::resource('/booking', 'App\Http\Controllers\bookingFrController');
+Route::resource('/course-detail', 'App\Http\Controllers\courseDetailFrController');
+Route::resource('/blog-detail', 'App\Http\Controllers\blogDetailFrController');
 
-Route::get('/course-detail', function () {
-    return view('course-detail');
-});
-Route::get('/blog-detail', function () {
-    return view('blog-detail');
-});
-// Route::get('/user-profile', function () {
-//     return view('user-profile');
-// });
-// Route::get('/booking', function () {
-//     return view('booking');
-// });
 // Route::resource('/booking', 'App\Http\Controllers\orderController');
 Route::put('update/{id}', [App\Http\Controllers\AdminFrController::class, 'index'])->name('updated');
 Route::post('/esewa', [App\Http\Controllers\EsewaController::class, 'esewaPay'])->name('esewa');
-Route::get('/search', [App\Http\Controllers\searchController::class])->name('search');
+Route::get('/search', [App\Http\Controllers\searchController::class, 'index'])->name('search');
 
 
 Route::get('/success', [App\Http\Controllers\EsewaController::class, 'esewaPaySuccess']);
