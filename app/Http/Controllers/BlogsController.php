@@ -27,7 +27,7 @@ class BlogsController extends Controller
      */
     public function create()
     {
-        $files = Files::paginate(10);
+        $files = Files::paginate(12);
         return view('admin.Blogs.create', compact('files'));
     }
 
@@ -68,7 +68,7 @@ class BlogsController extends Controller
      */
     public function show($id)
     {
-        $files = Files::paginate(10);
+        $files = Files::paginate(12);
         $blogs = new Blogs;
         $blogs = $blogs->where('id', $id)->First();
         return view('admin.Blogs.show', compact('blogs'), compact('files'));
@@ -82,7 +82,7 @@ class BlogsController extends Controller
      */
     public function edit($id)
     {
-        $files = Files::paginate(10);
+        $files = Files::paginate(12);
         $blogs = new Blogs;
         $blogs = $blogs->where('id', $id)->First();
         return view('admin.Blogs.edit', compact('blogs', 'files'));

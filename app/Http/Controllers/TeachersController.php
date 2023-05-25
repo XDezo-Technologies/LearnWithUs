@@ -27,7 +27,8 @@ class TeachersController extends Controller
      */
     public function create()
     {
-        $files = Files::paginate(10);
+        $files = Files::paginate(12);
+
         return view('admin.Teachers.create', compact('files'));
     }
 
@@ -76,7 +77,8 @@ class TeachersController extends Controller
      */
     public function show($teacherID)
     {
-        $files = Files::paginate(10);
+        $files = Files::paginate(12);
+
         $teachers = new Teachers;
         $teachers = $teachers->where('teacherID', $teacherID)->First();
         return view('admin.Teachers.show', compact('teachers'), compact('files'));

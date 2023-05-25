@@ -17,7 +17,7 @@ class WhyChooseUsController extends Controller
     {
         //
         $whyChooseUs = new WhyChooseUs;
-        $whyChooseUs = $whyChooseUs->paginate(4);
+        $whyChooseUs = $whyChooseUs->paginate(6);
         return view('admin.WhyChooseUs.index', compact('whyChooseUs'));
     }
 
@@ -29,7 +29,8 @@ class WhyChooseUsController extends Controller
     public function create()
     {
         //
-        $files = Files::paginate(10);
+        $files = Files::paginate(12);
+
         return view('admin.WhyChooseUs.create', compact('files'));
     }
 
@@ -48,12 +49,10 @@ class WhyChooseUsController extends Controller
                 'logo' => 'required',
                 'title' => 'required',
                 'description' => 'required',
-                'description2' => 'required',
             ]
         );
         $whyChooseUs->logo = $request->logo;
         $whyChooseUs->title = $request->title;
-        $whyChooseUs->description2 = $request->description2;
         $whyChooseUs->description = $request->description;
 
         $whyChooseUs->save();
@@ -68,7 +67,8 @@ class WhyChooseUsController extends Controller
      */
     public function show($id)
     {
-        $files = Files::paginate(10);
+        $files = Files::paginate(12);
+
         $whyChooseUs = new WhyChooseUs;
         $whyChooseUs = $whyChooseUs->where('id', $id)->First();
         return view('admin.WhyChooseUs.show', compact('whyChooseUs', 'files'));
@@ -84,7 +84,8 @@ class WhyChooseUsController extends Controller
     public function edit($id)
     {
         //
-        $files = Files::paginate(10);
+        $files = Files::paginate(12);
+
         $whyChooseUs = new WhyChooseUs;
         $whyChooseUs = $whyChooseUs->where('id', $id)->First();
         return view('admin.WhyChooseUs.edit', compact('whyChooseUs', 'files'));
@@ -105,7 +106,6 @@ class WhyChooseUsController extends Controller
         $whyChooseUs = $whyChooseUs->where('id', $id)->First();
         $whyChooseUs->logo = $request->logo;
         $whyChooseUs->title = $request->title;
-        $whyChooseUs->description2 = $request->description2;
         $whyChooseUs->description = $request->description;
         $whyChooseUs->update();
         return redirect('admin/whyChooseUs');

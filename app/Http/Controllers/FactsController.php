@@ -29,7 +29,8 @@ class FactsController extends Controller
     public function create()
     {
         // $facts = request()->get('img');
-        $files = Files::paginate(10);
+                $files = Files::paginate(12);
+
         return view('admin.facts.create', compact('files'));
         //
     }
@@ -65,7 +66,8 @@ class FactsController extends Controller
      */
     public function show($id)
     {
-        $files = Files::paginate(10);
+                $files = Files::paginate(12);
+
         //
         $facts = new Facts;
         $facts = $facts->where('id', $id)->First();
@@ -80,7 +82,8 @@ class FactsController extends Controller
      */
     public function edit($id)
     {
-        $files = Files::paginate(10);
+                $files = Files::paginate(12);
+
         //
         $facts = new Facts;
         $facts = $facts->where('id', $id)->First();

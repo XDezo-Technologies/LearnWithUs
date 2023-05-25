@@ -45,16 +45,11 @@
                                                 <div class="mb-3">
                                                     <label for="exampleFormControlTextarea1"
                                                         class="form-label">Description</label>
-                                                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name='description'></textarea>
+                                                    <textarea oninput="checkWordCount(this)" class="form-control" id="exampleFormControlTextarea1" rows="3"
+                                                        name='description'></textarea>
                                                 </div>
                                             </div>
-                                            <div class="col-lg-6 col-md-6 col-sm-6">
-                                                <div class="mb-3">
-                                                    <label for="exampleFormControlTextarea1"
-                                                        class="form-label">Description2</label>
-                                                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name='description2'></textarea>
-                                                </div>
-                                            </div>
+
                                         </div>
                                         <button type="submit" class="btn btn-primary" name="submit">Submit</button>
                                     </form>
@@ -66,6 +61,15 @@
             </section>
         </div>
     </main>
+    <script>
+        function checkWordCount(textarea) {
+            var words = textarea.value.trim().split(/\s+/).length;
+            if (words > 100) {
+                alert("You have exceeded the word limit of 100.");
+                textarea.value = textarea.value.trim().split(/\s+/).slice(0, 100).join(" ");
+            }
+        }
+    </script>
     <script>
         function firstFunction() {
             var x = document.querySelector('input[name=img]:checked').value;

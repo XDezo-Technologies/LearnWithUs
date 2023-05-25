@@ -17,7 +17,7 @@ class SettingsController extends Controller
     {
         //
         $settings = new Settings;
-        $settings = $settings->paginate(4);
+        $settings = $settings->paginate(6);
         return view('admin.settings.index', compact('settings'));
     }
 
@@ -29,8 +29,8 @@ class SettingsController extends Controller
     public function create()
     {
         // $settings = request()->get('img');
-        $files = Files::all();
-        return view('admin.settings.create', compact('files'));
+
+        return view('admin.settings.create');
         //
     }
 
@@ -65,11 +65,11 @@ class SettingsController extends Controller
      */
     public function show($id)
     {
-        $files = Files::all();
+
         //
         $settings = new Settings;
         $settings = $settings->where('id', $id)->First();
-        return view('admin.settings.show', compact('settings'), compact('files'));
+        return view('admin.settings.show', compact('settings'));
     }
 
     /**
@@ -80,11 +80,11 @@ class SettingsController extends Controller
      */
     public function edit($id)
     {
-        $files = Files::all();
+
         //
         $settings = new Settings;
         $settings = $settings->where('id', $id)->First();
-        return view('admin.settings.edit', compact('settings'), compact('files'));
+        return view('admin.settings.edit', compact('settings'));
     }
 
     /**

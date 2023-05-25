@@ -58,16 +58,6 @@
                                                     @enderror
                                                 </div>
                                             </div>
-                                            <div class="col-lg-6 col-md-6 col-sm-6">
-                                                <div class="mb-3">
-                                                    <label for="exampleFormControlTextarea1"
-                                                        class="form-label">Description2</label>
-                                                    <textarea class="form-control" id="exampleFormControlTextarea1" disabled rows="3" name='description2'>{{ $whyChooseUs->description2 }}</textarea>
-                                                    @error('Description2')
-                                                        <small>{{ $message }}</small>
-                                                    @enderror
-                                                </div>
-                                            </div>
 
                                         </div>
                                     </form>

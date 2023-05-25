@@ -41,17 +41,17 @@
                      <p>Get In Touch</p>
                      <ul>
                          @foreach ($settings as $set)
-                             @if ($set->siteKey == 'partner1')
+                             @if ($set->siteKey == 'Gmail')
                                  <li>
                                      <a href="mailto:{{ $set->siteValue }}">{{ $set->siteValue }}</a>
                                  </li>
                              @endif
-                             @if ($set->siteKey == 'partner2')
+                             @if ($set->siteKey == 'Tel_no')
                                  <li>
                                      <a href="tel:{{ $set->siteValue }}">{{ $set->siteValue }}</a>
                                  </li>
                              @endif
-                             @if ($set->siteKey == 'partner3')
+                             @if ($set->siteKey == 'Phone')
                                  <li>
                                      <a href="tel:{{ $set->siteValue }}">{{ $set->siteValue }}</a>
                                  </li>
@@ -65,16 +65,28 @@
          <div class="row">
              <div class="col-md-6">
                  <div class="copyright">
-                     <span>&copy; 2023 Learn With Us. All rights reserved</span>
+                     @if ($set->siteKey == 'copyright')
+                         <span>&copy; {{ $set->siteValue }}</span>
+                     @endif
                  </div>
              </div>
              <div class="col-md-6">
                  <div class="follow-us">
                      <span>Follow us on:</span>
                      <ul>
-                         <li><a href="facebook.com"><i class="fab fa-facebook text-light"></i></a></li>
-                         <li><a href="twitter.com"><i class="fab fa-twitter text-light"></i></a></li>
-                         <li><a href="instagram.com"><i class="fab fa-instagram text-light"></i></a></li>
+                         @foreach ($settings as $set)
+                             @if ($set->siteKey == 'facebook_site')
+                                 <li><a href="{{ $set->siteValue }}"><i class="fab fa-facebook text-light"></i></a>
+                                 </li>
+                             @endif
+                             @if ($set->siteKey == 'twitter_site')
+                                 <li><a href="{{ $set->siteValue }}"><i class="fab fa-twitter text-light"></i></a></li>
+                             @endif
+                             @if ($set->siteKey == 'instagram_site')
+                                 <li><a href="{{ $set->siteValue }}"><i class="fab fa-instagram text-light"></i></a>
+                                 </li>
+                             @endif
+                         @endforeach
                      </ul>
                  </div>
              </div>

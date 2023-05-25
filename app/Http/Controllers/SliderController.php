@@ -29,7 +29,7 @@ class SliderController extends Controller
     public function create()
     {
         // $sliders = request()->get('img');
-        $files = Files::paginate(4);
+        $files = Files::paginate(12);
         return view('admin.Sliders.create', compact('files'));
         //
     }
@@ -67,7 +67,7 @@ class SliderController extends Controller
      */
     public function show($id)
     {
-        $files = Files::all();
+        $files = Files::paginate(12);
         //
         $sliders = new Slider;
         $sliders = $sliders->where('id', $id)->First();
@@ -82,7 +82,7 @@ class SliderController extends Controller
      */
     public function edit($id)
     {
-        $files = Files::all();
+        $files = Files::paginate(12);
         //
         $sliders = new Slider;
         $sliders = $sliders->where('id', $id)->First();

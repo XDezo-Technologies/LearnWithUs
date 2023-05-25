@@ -29,7 +29,7 @@ class AboutsController extends Controller
     public function create()
     {
         //
-        $files = Files::paginate(10);
+        $files = Files::paginate(12);
         return view('admin.Abouts.create', compact('files'));
     }
 
@@ -66,7 +66,7 @@ class AboutsController extends Controller
      */
     public function show($id)
     {
-        $files = Files::paginate(10);
+        $files = Files::paginate(12);
         $abouts = new Abouts;
         $abouts = $abouts->where('id', $id)->First();
         return view('admin.Abouts.show', compact('abouts', 'files'));
@@ -82,7 +82,7 @@ class AboutsController extends Controller
     public function edit($id)
     {
         //
-        $files = Files::paginate(10);
+        $files = Files::paginate(12);
         $abouts = new Abouts;
         $abouts = $abouts->where('id', $id)->First();
         return view('admin.Abouts.edit', compact('abouts', 'files'));

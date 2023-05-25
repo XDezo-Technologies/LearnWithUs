@@ -22,7 +22,7 @@
 
                 <div class="row">
                     @foreach ($blogs as $blog)
-                        <div class="cardi col-md-3 mb-2 bg-light overflow-hidden ">
+                        <div class="cardi col-md-3 col-lg-3 mb-2 bg-light overflow-hidden ">
                             <img src="{{ asset('uploads/' . $blog->img) }}" alt="">
                             <p>{{ $blog->created_at->format('Y-m-d') }}</p>
                             <a href="{{ url('/blog-detail', ['id' => $blog->id]) }}">
@@ -32,5 +32,6 @@
                 </div>
 
             </div>
+        </div>
     </main>
 @endsection

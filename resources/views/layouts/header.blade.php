@@ -21,8 +21,7 @@
     <link href="{{ asset('../front-assets/css/other.css') }}" rel="stylesheet">
     <link rel="icon" href="{{ asset('../front-assets/img/logotop.jpg') }}">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
-
-    <script src="https://khalti.s3.ap-south-1.amazonaws.com/KPG/dist/2020.12.17.0.0.0/khalti-checkout.iffe.js"></script>
+    <script src="https://kit.fontawesome.com/59ab81e02a.js" crossorigin="anonymous"></script>
 </head>
 <title>LearnWithUs</title>
 </head>

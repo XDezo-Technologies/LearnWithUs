@@ -39,7 +39,8 @@
                                                 <div class="mb-3">
                                                     <label for="exampleFormControlTextarea1"
                                                         class="form-label">Description</label>
-                                                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name='description'></textarea>
+                                                    <textarea class="form-control" oninput="checkWordCount(this)" id="exampleFormControlTextarea1" rows="3"
+                                                        name='description'></textarea>
                                                     @error('description')
                                                         <small>{{ $message }}</small>
                                                     @enderror
@@ -124,6 +125,15 @@
             </section>
         </div>
     </main>
+    <script>
+        function checkWordCount(textarea) {
+            var words = textarea.value.trim().split(/\s+/).length;
+            if (words > 250) {
+                alert("You have exceeded the word limit of 250.");
+                textarea.value = textarea.value.trim().split(/\s+/).slice(0, 250).join(" ");
+            }
+        }
+    </script>
     <script>
         function firstFunction() {
             var x = document.querySelector('input[name=img]:checked').value;

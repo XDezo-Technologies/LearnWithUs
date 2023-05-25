@@ -27,7 +27,8 @@ class TestimonialsController extends Controller
      */
     public function create()
     {
-        $files = Files::paginate(10);
+        $files = Files::paginate(12);
+
         return view('admin.Testimonials.create', compact('files'));
     }
 
@@ -68,7 +69,8 @@ class TestimonialsController extends Controller
      */
     public function show($id)
     {
-        $files = Files::paginate(10);
+        $files = Files::paginate(12);
+
         $testimonials = new Testimonials;
         $testimonials = $testimonials->where('id', $id)->First();
         return view('admin.Testimonials.show', compact('testimonials'), compact('files'));
@@ -82,7 +84,8 @@ class TestimonialsController extends Controller
      */
     public function edit($id)
     {
-        $files = Files::paginate(10);
+        $files = Files::paginate(12);
+
         $testimonials = new Testimonials;
         $testimonials = $testimonials->where('id', $id)->First();
         return view('admin.Testimonials.edit', compact('testimonials', 'files'));

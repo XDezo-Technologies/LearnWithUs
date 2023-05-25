@@ -8,13 +8,15 @@
                         <h2>Our Expert Instructor</h2>
                         <div class="row mb-5">
                             @foreach ($teachers as $teacher)
-                                <div class="col-md-4">
-                                    <div class="card rounded shadow">
+                                <div class="col-md-4 mb-3">
+                                    <div class="card rounded shadow" data-bs-toggle="modal"
+                                        data-bs-target="#modalId{{ $teacher->teacherID }}">
                                         <img src="{{ asset('uploads/' . $teacher->img) }}" class=" rounded shadow-img-top"
-                                            alt="Project 1">
+                                            alt="Project 1"
+                                            style=" height:200px; 
+                                        object-position: top;object-fit:cover;">
                                         <div class="card-body">
-                                            <h5 class="card-title" data-bs-toggle="modal"
-                                                data-bs-target="#modalId{{ $teacher->teacherID }}">
+                                            <h5 class="card-title">
                                                 {{ $teacher->name }}</h5>
                                             <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit.
                                             </p>
@@ -61,7 +63,7 @@
                                                     </div>
                                                 </div>
                                                 <div class="modal-footer">
-                                                    <button type="button" class="btn btn-secondary"
+                                                    <button type="button" class="btn btn-success"
                                                         data-bs-dismiss="modal">Close</button>
                                                     <button type="button" class="btn btn-primary">Save changes</button>
                                                 </div>

@@ -90,144 +90,148 @@
                         </div>
                     </div>
                     <!-- ./col -->
-                    <div class="col-lg-3 col-6">
-                        <!-- small box -->
-                        <div class="small-box bg-success">
-                            <div class="inner">
-                                <h3>File Manager
-                                </h3>
+                    @if (Auth::check() && Auth::user()->role == 1)
+                        <div class="col-lg-3 col-6">
+                            <!-- small box -->
+                            <div class="small-box bg-success">
+                                <div class="inner">
+                                    <h3>File Manager
+                                    </h3>
 
-                                <p class="text-justify">All image should be uploded in Filemanager first.</p>
+                                    <p class="text-justify">All image should be uploded in Filemanager first.</p>
+                                </div>
+                                <a href="{{ route('file.create') }}" class="small-box-footer">Click me to upload
+                                    file</i></a>
                             </div>
-                            <a href="{{ route('file.create') }}" class="small-box-footer">Click me to upload file</i></a>
                         </div>
-                    </div>
 
-                    <!-- ./col -->
-                    <div class="col-lg-3 col-6">
-                        <!-- small box -->
-                        <div class="small-box bg-success">
-                            <div class="inner">
-                                <h3>Blogs
-                                </h3>
+                        <!-- ./col -->
+                        <div class="col-lg-3 col-6">
+                            <!-- small box -->
+                            <div class="small-box bg-success">
+                                <div class="inner">
+                                    <h3>Blogs
+                                    </h3>
 
-                                <p class="text-justify">Teachers/admin can Post blogs From Here </p>
+                                    <p class="text-justify">Teachers/admin can Post blogs From Here </p>
+                                </div>
+                                <a href="{{ route('blog.create') }}" class="small-box-footer">Click here to upload
+                                    file</i></a>
                             </div>
-                            <a href="{{ route('blog.create') }}" class="small-box-footer">Click here to upload file</i></a>
                         </div>
-                    </div>
-                    <!-- ./col -->
+                        <!-- ./col -->
 
-                    <!-- ./col -->
-                    <div class="col-lg-3 col-6">
-                        <!-- small box -->
-                        <div class="small-box bg-danger">
-                            <div class="inner">
-                                <h3>Slider</h3>
+                        <!-- ./col -->
+                        <div class="col-lg-3 col-6">
+                            <!-- small box -->
+                            <div class="small-box bg-danger">
+                                <div class="inner">
+                                    <h3>Slider</h3>
 
-                                <p class="text-justify">You can upload slider from here though only 3 will be display</p>
+                                    <p class="text-justify">You can upload slider from here though only 3 will be display
+                                    </p>
+                                </div>
+                                <a href="{{ route('slider.create') }}" class="small-box-footer">Click me to create</i></a>
                             </div>
-                            <a href="{{ route('slider.create') }}" class="small-box-footer">Click me to create</i></a>
                         </div>
-                    </div>
-                    <!-- ./col -->
-                    <div class="col-lg-3 col-6">
-                        <!-- small box -->
-                        <div class="small-box bg-info">
-                            <div class="inner">
-                                <h3>About</h3>
+                        <!-- ./col -->
+                        <div class="col-lg-3 col-6">
+                            <!-- small box -->
+                            <div class="small-box bg-info">
+                                <div class="inner">
+                                    <h3>About</h3>
 
-                                <p class="text-justify">Upload About of Website by clicking below
-                                </p>
+                                    <p class="text-justify">Upload About of Website by clicking below
+                                    </p>
+                                </div>
+                                <a href="{{ route('about.create') }}" class="small-box-footer">Click me to add</i></a>
                             </div>
-                            <a href="{{ route('about.create') }}" class="small-box-footer">Click me to add</i></a>
                         </div>
-                    </div>
-                    <!-- ./col -->
-                    <div class="col-lg-3 col-6">
-                        <!-- small box -->
-                        <div class="small-box bg-success">
-                            <div class="inner">
-                                <h3>About features
-                                </h3>
+                        <!-- ./col -->
+                        <div class="col-lg-3 col-6">
+                            <!-- small box -->
+                            <div class="small-box bg-success">
+                                <div class="inner">
+                                    <h3>About features
+                                    </h3>
 
-                                <p class="text-justify">Another Paragraph with image in about page</p>
+                                    <p class="text-justify">Another Paragraph with image in about page</p>
+                                </div>
+                                <a href="{{ route('aboutFeature.create') }}" class="small-box-footer">Click here to
+                                    create</i></a>
                             </div>
-                            <a href="{{ route('aboutFeature.create') }}" class="small-box-footer">Click here to
-                                create</i></a>
                         </div>
-                    </div>
-                    <!-- ./col -->
-                    <div class="col-lg-3 col-6">
-                        <!-- small box -->
-                        <div class="small-box bg-warning">
-                            <div class="inner">
-                                <h3>Setting</h3>
-                                <p class="text-justify">Every side config work is done here.
-                                </p>
+                        <!-- ./col -->
+                        <div class="col-lg-3 col-6">
+                            <!-- small box -->
+                            <div class="small-box bg-warning">
+                                <div class="inner">
+                                    <h3>Setting</h3>
+                                    <p class="text-justify">Every side config work is done here.
+                                    </p>
+                                </div>
+                                <a href="{{ route('setting.index') }}" class="small-box-footer">Click me to create</i></a>
                             </div>
-                            <a href="{{ route('setting.index') }}" class="small-box-footer">Click me to create</i></a>
                         </div>
-                    </div>
-                    <!-- ./col -->
-                    <div class="col-lg-3 col-6">
-                        <!-- small box -->
-                        <div class="small-box bg-danger">
-                            <div class="inner">
-                                <h3>Courses</h3>
+                        <!-- ./col -->
+                        <div class="col-lg-3 col-6">
+                            <!-- small box -->
+                            <div class="small-box bg-danger">
+                                <div class="inner">
+                                    <h3>Courses</h3>
 
-                                <p class="text-justify">You can upload courses from here .</p>
+                                    <p class="text-justify">You can upload courses from here .</p>
+                                </div>
+                                <a href="{{ route('course.create') }}" class="small-box-footer">Click me to create</i></a>
                             </div>
-                            <a href="{{ route('course.create') }}" class="small-box-footer">Click me to create</i></a>
                         </div>
-                    </div>
-                    <!-- ./col -->
+                        <!-- ./col -->
 
-                    <!-- ./col -->
-                    <div class="col-lg-3 col-6">
-                        <!-- small box -->
-                        <div class="small-box bg-success">
-                            <div class="inner">
-                                <h3>Teachers
-                                </h3>
+                        <!-- ./col -->
+                        <div class="col-lg-3 col-6">
+                            <!-- small box -->
+                            <div class="small-box bg-success">
+                                <div class="inner">
+                                    <h3>Teachers
+                                    </h3>
 
-                                <p class="text-justify">Teacher must register here too, So students can know.</p>
+                                    <p class="text-justify">Teacher must register here too, So students can know.</p>
+                                </div>
+                                <a href="{{ route('teacher.create') }}" class="small-box-footer">Click here to
+                                    create</i></a>
                             </div>
-                            <a href="{{ route('teacher.create') }}" class="small-box-footer">Click here to
-                                create</i></a>
                         </div>
-                    </div>
-                    <!-- ./col -->
-                    <div class="col-lg-3 col-6">
-                        <!-- small box -->
-                        <div class="small-box bg-warning">
-                            <div class="inner">
-                                <h3>Testimonials</h3>
-                                <p class="text-justify">Add best choosen testimonials from here
-                                </p>
+                        <!-- ./col -->
+                        <div class="col-lg-3 col-6">
+                            <!-- small box -->
+                            <div class="small-box bg-warning">
+                                <div class="inner">
+                                    <h3>Testimonials</h3>
+                                    <p class="text-justify">Add best choosen testimonials from here
+                                    </p>
+                                </div>
+                                <a href="{{ route('testimonial.index') }}" class="small-box-footer">Click me to
+                                    create</i></a>
                             </div>
-                            <a href="{{ route('testimonial.index') }}" class="small-box-footer">Click me to
-                                create</i></a>
                         </div>
-                    </div>
-                    <!-- ./col -->
+                        <!-- ./col -->
 
-                    <!-- ./col -->
-                    <div class="col-lg-3 col-6">
-                        <!-- small box -->
-                        <div class="small-box bg-info">
-                            <div class="inner">
-                                <h3>Facts</h3>
+                        <!-- ./col -->
+                        <div class="col-lg-3 col-6">
+                            <!-- small box -->
+                            <div class="small-box bg-info">
+                                <div class="inner">
+                                    <h3>Facts</h3>
 
-                                <p class="text-justify">Upload Facts of School by clicking below
-                                </p>
+                                    <p class="text-justify">Upload Facts of School by clicking below
+                                    </p>
+                                </div>
+                                <a href="{{ route('fact.create') }}" class="small-box-footer">Click me to add</i></a>
                             </div>
-                            <a href="{{ route('fact.create') }}" class="small-box-footer">Click me to add</i></a>
                         </div>
-                    </div>
-                    <!-- ./col -->
-                    <!-- ./col -->
-
+                        <!-- ./col -->
+                        <!-- ./col -->
+                    @endif
                 </div>
                 <!-- /.row (main row) -->
             </div><!-- /.container-fluid -->

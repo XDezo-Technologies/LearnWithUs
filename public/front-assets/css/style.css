@@ -6,10 +6,12 @@
 body {
     font-family: "Castoro Titling", cursive;
 }
-
+header {
+    margin-bottom: 75px;
+}
 /*! Navbar */
 nav {
-    position: fixed !important;
+    /* position: sticky !important; */
     width: 100%;
 }
 
@@ -570,8 +572,8 @@ ul {
 }
 
 .card img {
-    max-width: 100%;
-    height: auto;
+    object-fit: fill;
+    object-position: center;
 }
 
 .card .card-footer {
@@ -1053,13 +1055,7 @@ footer hr {
     }
 
     .testi-img {
-        top: 44%;
-        left: 55%;
-    }
-
-    .testi-img img {
-        width: 290px;
-        height: 440px;
+        visibility: hidden;
     }
 
     .semicircle {
@@ -1131,16 +1127,6 @@ footer hr {
     .mySlides {
         padding-left: 0 !important;
         padding-right: 5rem !important;
-    }
-
-    .testi-img {
-        top: 50%;
-        left: 60%;
-    }
-
-    .testi-img img {
-        width: 210px;
-        height: 360px;
     }
 
     .semicircle {
@@ -1279,10 +1265,6 @@ footer hr {
     }
 
     .semicircle {
-        visibility: hidden;
-    }
-
-    .testi-img {
         visibility: hidden;
     }
 

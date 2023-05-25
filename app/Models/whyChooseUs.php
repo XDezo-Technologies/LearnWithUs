@@ -8,5 +8,5 @@ use Illuminate\Database\Eloquent\Model;
 class whyChooseUs extends Model
 {
     use HasFactory;
-    protected $fillable = ['logo', 'title', 'description', 'description2'];
+    protected $fillable = ['logo', 'title', 'description'];
 }

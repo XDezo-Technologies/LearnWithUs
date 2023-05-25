@@ -27,7 +27,7 @@ class ClientsController extends Controller
      */
     public function create()
     {
-        $files = Files::all();
+        $files = Files::paginate(12);
         return view('admin.Clients.create', compact('files'));
     }
 
@@ -58,7 +58,7 @@ class ClientsController extends Controller
      */
     public function show($id)
     {
-        $files = Files::all();
+        $files = Files::paginate(12);
         $clients = new Clients;
         $clients = $clients->where('id', $id)->First();
         return view('admin.Clients.show', compact('clients', 'files'));
@@ -72,7 +72,7 @@ class ClientsController extends Controller
      */
     public function edit($id)
     {
-        $files = Files::all();
+        $files = Files::paginate(12);
         $clients = new Clients;
         $clients = $clients->where('id', $id)->First();
         return view('admin.Clients.edit', compact('clients', 'files'));

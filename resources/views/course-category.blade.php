@@ -6,12 +6,11 @@
                 <h2 class="my-5">We Provide Many Type Of Courses</h2>
                 <div class="row mb-5">
                     @foreach ($courses as $course)
-                        <div class="col-md-4 mt-3">
-                            <div class="card">
+                        <div class="col-md-4 mb-3">
+                            <div class="card" data-bs-toggle="modal" data-bs-target="#Modal{{ $course->courseID }}">
                                 <div class="category-top">
-                                    <img src="{{ asset('uploads/' . $course->img) }}"class="card-img-top  w-100 h-70 float-start"
-                                        alt="..." style="max-height: 200px; height: 100%;">
-
+                                    <img src="{{ asset('uploads/' . $course->img) }}" class="card-img-top w-100 rounded"
+                                        alt="..." style=" height:200px;">
                                     <div class="btn btn-outline-danger rounded-pill w-25 float-end mt-5 me-2 "
                                         id="heartBtn" title="Wishlist" onclick="onAddToCart({{ $course->courseID }})">
                                         <i class="fa-regular fa-heart"></i>
@@ -20,29 +19,68 @@
                                 <div class="card-body">
                                     <h5 class="card-title">{{ $course->title }}</h5>
                                     <p class="card-text mb-5">{{ $course->description }}</p>
-                                    <a href="#" class="btn btn-course rounded-pill " type="button"
-                                        data-toggle="collapse" data-target="#collapseExample{{ $course->courseID }}"
-                                        aria-expanded="false" aria-controls="collapseExample{{ $course->courseID }}">View
-                                        More<i class="fa-solid fa-arrow-down pt-1"></i></a>
-                                    <div class="collapse mt-3" id="collapseExample{{ $course->courseID }}">
-                                        <div>
-                                            <p>{{ $course->description2 }}</p>
-                                            <hr>
-                                            <div class="buy">
-                                                <p class="price w-50 float-start mt-3">Rs {{ $course->price }}/-</p>
-                                                <a href="{{ url('booking') }}?courseID={{ $course->courseID }}&price={{ $course->price }}"
-                                                    class="btn btn-outline-success rounded-pill mt-2 w-50 float-end">Buy</a>
+                                    <h5 class="btn btn-lg btn-secondary rounded-pill text-center" data-bs-toggle="modal"
+                                        data-bs-target="#Modal{{ $course->courseID }}">View more</h5>
+                                    <!-- Modal -->
+                                </div>
+                            </div>
+                            <div class="modal fade" id="Modal{{ $course->courseID }}" tabindex="-1"
+                                aria-labelledby="ModalLabel" aria-hidden="true">
+                                <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-lg ">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title" id="ModalLabel">Modal title</h5>
+                                            <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                                aria-label="Close"></button>
+                                        </div>
+                                        <div class="modal-body">
+                                            <div class="row">
+                                                <div class="col-lg-5"><img src="{{ asset('uploads/' . $course->img) }}"
+                                                        alt="course_img" class="w-100"
+                                                        style="height: 250px
+                                                        ">
+                                                </div>
+                                                <div class="col-lg-6 p-2">
+                                                    <div class="card border-dark m-3 w-100">
+                                                        <div class="card-body text-dark  text-left">
+                                                            <h5>Name : <strong>{{ $course->title }}</strong></h5>
+                                                            <h5>Post : <strong>{{ $course->time }}</strong></h5>
 
+                                                        </div>
+                                                    </div>
+                                                    <hr>
+                                                    <div class="card border-dark m-3 w-100">
+                                                        <div class="card-body text-dark  text-left">
+                                                            <div class="buy">
+                                                                <p class="price w-50 float-start mt-3">Rs
+                                                                    {{ $course->price }}/-</p>
+                                                                <a href="{{ url('booking') }}?courseID={{ $course->courseID }}&price={{ $course->price }}"
+                                                                    class="btn btn-outline-success rounded-pill mt-2 w-50 float-end">Buy</a>
+
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <p class="text-justify">{{ $course->description }}</p>
+
+                                                <p class="text-justify">{{ $course->description2 }}</p>
                                             </div>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-secondary"
+                                                data-bs-dismiss="modal">Close</button>
+                                            <button type="button" class="btn btn-primary">Save changes</button>
                                         </div>
                                     </div>
                                 </div>
                             </div>
+
                         </div>
                     @endforeach
-                    <div>
-                        {{ $courses->links() }}
-                    </div>
+
+                </div>
+                <div>
+                    {{ $courses->links() }}
                 </div>
             </div>
         </section>

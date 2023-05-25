@@ -22,26 +22,24 @@
 
         {{-- Partner section --}}
         <section class="partner bg-light">
-            <div class="text-center pt-3 pb-2">
-                <h3 style="font-weight: bold">Our Trusted Partners</h3>
-            </div>
             <div class="container">
-                <div class="row px-2 justify-content-around">
-                    <div class="col-sm-6 col-md-3 mb-4">
-                        <img src="{{ asset('front-assets/img/partner1.png') }}" style="max-height: 150px;max-width:150px"
-                            height="100%" width="100%" alt="Image" class="img-fluid rounded">
-                    </div>
-                    <div class="col-sm-6 col-md-3 mb-4">
-                        <img src="{{ asset('front-assets/img/partner2.png') }}" height="110" width="140" alt="Image"
-                            class="img-fluid rounded">
-                    </div>
-                    <div class="col-sm-6 col-md-3 mb-4">
-                        <img src="{{ asset('front-assets/img/partner3.png') }}" height="110" width="140" alt="Image"
-                            class="img-fluid rounded">
-                    </div>
-                    <div class="col-sm-6 col-md-3 mb-4">
-                        <img src="{{ asset('front-assets/img/partner4.png') }}" height="110" width="140" alt="Image"
-                            class="img-fluid rounded">
+                <div class="carousel-container">
+                    <div class="inner-carousel">
+                        <h1 class="text-center">Our clients</h1>
+                        <div class="track">
+                            @foreach ($clients as $client)
+                                <div class="card-container">
+                                    <div class="card card1"
+                                        style="background-image:  url({{ asset('uploads/' . $client->img) }});">
+                                    </div>
+                                </div>
+                            @endforeach
+
+                        </div>
+                        <div class="nav">
+                            <button class="prev"><i class="fa-solid fa-arrow-left"></i></i></button>
+                            <button class="next"><i class="fa-solid fa-arrow-right"></i></i></button>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -95,11 +93,11 @@
                 </div>
                 <div class="row mb-5">
                     @foreach ($courses as $course)
-                        <div class="col-md-4">
-                            <div class="card">
+                        <div class="col-md-4 mb-3">
+                            <div class="card" data-bs-toggle="modal" data-bs-target="#Modal{{ $course->courseID }}">
                                 <div class="category-top">
-                                    <img src="{{ asset('uploads/' . $course->img) }}"
-                                        class="card-img-top pe-5 w-100 h-70 float-start" alt="...">
+                                    <img src="{{ asset('uploads/' . $course->img) }}" class="card-img-top w-100 rounded"
+                                        alt="..." style=" height:200px;">
                                     <div class="btn btn-outline-danger rounded-pill w-25 float-end mt-5 me-2 "
                                         id="heartBtn" title="Wishlist" onclick="onAddToCart({{ $course->courseID }})">
                                         <i class="fa-regular fa-heart"></i>
@@ -108,105 +106,71 @@
                                 <div class="card-body">
                                     <h5 class="card-title">{{ $course->title }}</h5>
                                     <p class="card-text mb-5">{{ $course->description }}</p>
-                                    <a href="#" class="btn btn-course rounded-pill" type="button"
-                                        data-toggle="collapse" data-target="#collapseExample{{ $course->courseID }}"
-                                        aria-expanded="false" aria-controls="collapseExample{{ $course->courseID }}">View
-                                        More<i class="fa-solid fa-arrow-down pt-1"></i></a>
-                                    <div class="collapse mt-3" id="collapseExample{{ $course->courseID }}">
-                                        <div>
-                                            <p>{{ $course->description2 }}</p>
-                                            <hr>
-                                            <div class="buy">
-                                                <p class="price w-50 float-start mt-3">Rs {{ $course->price }}/-</p>
-                                                <a href="{{ url('booking') }}?courseID={{ $course->courseID }}&price={{ $course->price }}"
-                                                    class="btn btn-outline-success rounded-pill mt-2 w-50 float-end">Buy</a>
+                                    <h5 class="btn btn-lg btn-success rounded-pill text-center" data-bs-toggle="modal"
+                                        data-bs-target="#Modal{{ $course->courseID }}">View more</h5>
+                                    <!-- Modal -->
+                                </div>
+                            </div>
+                            <div class="modal fade" id="Modal{{ $course->courseID }}" tabindex="-1"
+                                aria-labelledby="ModalLabel" aria-hidden="true">
+                                <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-lg ">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title" id="ModalLabel">Modal title</h5>
+                                            <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                                aria-label="Close"></button>
+                                        </div>
+                                        <div class="modal-body">
+                                            <div class="row">
+                                                <div class="col-lg-5"><img src="{{ asset('uploads/' . $course->img) }}"
+                                                        alt="course_img" class="w-100"
+                                                        style="height: 250px
+                                                        ">
+                                                </div>
+                                                <div class="col-lg-6 p-2">
+                                                    <div class="card border-dark m-3 w-100">
+                                                        <div class="card-body text-dark  text-left">
+                                                            <h5>Name : <strong>{{ $course->title }}</strong></h5>
+                                                            <h5>Post : <strong>{{ $course->time }}</strong></h5>
 
+                                                        </div>
+                                                    </div>
+                                                    <hr>
+                                                    <div class="card border-dark m-3 w-100">
+                                                        <div class="card-body text-dark  text-left">
+                                                            <div class="buy">
+                                                                <p class="price w-50 float-start mt-3">Rs
+                                                                    {{ $course->price }}/-</p>
+                                                                <a href="{{ url('booking') }}?courseID={{ $course->courseID }}&price={{ $course->price }}"
+                                                                    class="btn btn-outline-success rounded-pill mt-2 w-50 float-end">Buy</a>
+
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <p class="text-justify">{{ $course->description }}</p>
+
+                                                <p class="text-justify">{{ $course->description2 }}</p>
                                             </div>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-success"
+                                                data-bs-dismiss="modal">Close</button>
+                                            <button type="button" class="btn btn-primary">Save changes</button>
                                         </div>
                                     </div>
                                 </div>
                             </div>
+
                         </div>
                     @endforeach
                 </div>
             </div>
-        </section>
-        {{-- Course section ends --}}
-
-        {{-- course info section --}}
-        <section>
-            <div class="container course-info">
-                <div class="row">
-                    <div class="col-md-6 col-sm-12">
-                        <div class="course-skill pe-5">
-                            <h2>Various type of course will scale up your skill</h2>
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sit, accusamus. Lorem ipsum
-                                dolor sit amet consectetur adipisicing elit. Quibusdam, praesentium.</p>
-                            <a href="{{ '/course-detail' }}" class="btn btn-course rounded-pill w-50 mt-4">View More<i
-                                    class="fa-solid fa-arrow-right pt-1"></i></a>
-                        </div>
-                    </div>
-                    <div class="col-md-6 col-sm-12">
-                        <div class="course-chart">
-                            {{-- <svg id="sw-js-blob-svg" viewBox="0 0 100 100">
-                                <defs>
-                                    <linearGradient id="sw-gradient" x1="0" x2="1" y1="1"
-                                        y2="0">
-                                        <stop id="stop1" stop-color="rgba(232, 232, 232, 1)" offset="0%"></stop>
-                                        <stop id="stop2" stop-color="rgba(232, 232, 232, 1)" offset="100%"></stop>
-                                    </linearGradient>
-
-                                    <!-- Define pattern for the image -->
-                                    <pattern id="image-pattern" width="100%" height="100%"
-                                        patternContentUnits="objectBoundingBox">
-                                        <image xlink:href="{{ asset('front-assets/img/partner1.png') }}" width="1"
-                                            height="1" preserveAspectRatio="xMidYMid meet" />
-                                    </pattern>
-                                </defs>
-
-                                <!-- Original path with gradient fill -->
-                                <path fill="url(#sw-gradient)"
-                                    d="M25.1,-30.9C32.1,-24,37.2,-15.7,38.5,-6.9C39.9,1.8,37.6,11.1,32.9,18.9C28.3,26.7,21.3,33.2,13.2,36.1C5,39,-4.4,38.4,-13.1,35.5C-21.9,32.6,-30,27.3,-35.9,19.6C-41.8,11.8,-45.4,1.6,-43.9,-7.9C-42.4,-17.3,-35.7,-26,-27.5,-32.7C-19.4,-39.5,-9.7,-44.4,-0.3,-44C9,-43.6,18,-37.9,25.1,-30.9Z"
-                                    width="100%" height="100%" transform="translate(50 50)" stroke-width="0"
-                                    style="transition: all 0.3s ease 0s;" stroke="url(#sw-gradient)"></path>
-
-                                <!-- Rectangle using the image pattern -->
-                                <rect fill="url(#image-pattern)" x="-50" y="-50" width="200"
-                                    height="200" />
-                            </svg> --}}
-                            <svg id="sw-js-blob-svg" viewBox="0 0 100 100">
-                                <defs>
-                                    <linearGradient id="sw-gradient" x1="0" x2="1" y1="1"
-                                        y2="0">
-                                        <stop id="stop1" stop-color="#FFC200" offset="0%"></stop>
-                                        <stop id="stop2" stop-color="#FF8A00" offset="100%"></stop>
-                                    </linearGradient>
-
-                                    <!-- Define pattern for the image -->
-                                    <pattern id="image-pattern" width="100%" height="100%"
-                                        patternContentUnits="objectBoundingBox">
-                                        <image xlink:href="{{ asset('front-assets/img/partner1.png') }}" width="1"
-                                            height="1" preserveAspectRatio="xMidYMid slice" />
-                                    </pattern>
-                                </defs>
-
-                                <!-- Background circle with gradient -->
-                                <circle cx="50" cy="50" r="55" fill="url(#sw-gradient)" />
-
-                                <!-- Image circle with pattern -->
-                                <circle cx="50" cy="50" r="50" fill="url(#image-pattern)" />
-                            </svg>
-
-
-
-
-                        </div>
-                    </div>
-
-                </div>
+            <div class="text-center">
+                <a href="/course-category" class="text-light btn btn-success">View more -> </a>
             </div>
         </section>
-        {{-- course info section ends --}}
+        {{-- Course section ends --}}
 
         {{-- instructor section --}}
         <section class="bg-light mt-5">
@@ -220,17 +184,65 @@
                     </div>
                     <div class="row">
                         @foreach ($teachers as $teacher)
-                            <div class="col-md-4">
-                                <div class="card rounded shadow">
+                            <div class="col-md-4 mb-3">
+                                <div class="card rounded shadow" data-bs-toggle="modal"
+                                    data-bs-target="#modalId{{ $teacher->teacherID }}">
                                     <img src="{{ asset('uploads/' . $teacher->img) }}" class=" rounded shadow-img-top"
-                                        alt="Project 1">
+                                        alt="Project 1"
+                                        style=" height:200px; 
+                                        object-position: top;object-fit:cover;">
                                     <div class="card-body">
-                                        <h5 class="card-title">{{ $teacher->name }}</h5>
-                                        <p class="card-text">{{ $teacher->post }}</p>
+                                        <h5 class="card-title">
+                                            {{ $teacher->name }}</h5>
+                                        <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                                        </p>
                                         <div class="social-icons">
-                                            <a href="#" class="text-dark"><i class="fab fa-facebook"></i></a>
-                                            <a href="#" class="text-dark px-3"><i class="fab fa-twitter"></i></a>
-                                            <a href="#" class="text-dark"><i class="fab fa-instagram"></i></a>
+                                            <a href="{{ $teacher->facebook }}" class="text-dark"><i
+                                                    class="fab fa-facebook"></i></a>
+                                            <a href="{{ $teacher->twitter }}" class="text-dark px-3"><i
+                                                    class="fab fa-twitter"></i></a>
+                                            <a href="{{ $teacher->instagram }}" class="text-dark"><i
+                                                    class="fab fa-instagram"></i></a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Button trigger modal -->
+                                <!-- Modal -->
+                                <div class="modal fade" id="modalId{{ $teacher->teacherID }}" tabindex="-1"
+                                    aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                    <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-lg  ">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <h5 class="modal-title" id="exampleModalLabel">About Me</h5>
+                                                <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                                    aria-label="Close"></button>
+                                            </div>
+                                            <div class="modal-body">
+                                                <div class="row">
+                                                    <div class="col-lg-5"><img
+                                                            src="{{ asset('uploads/' . $teacher->img) }}"
+                                                            alt="teacher_img" class="w-100"></div>
+                                                    <div class="col-lg-6 p-2">
+                                                        <div class="card border-dark m-3 w-100">
+                                                            <div class="card-body text-dark  text-left">
+                                                                <h5>Name : <strong>{{ $teacher->name }}</strong></h5>
+                                                                <h5>Post : <strong>{{ $teacher->post }}</strong></h5>
+                                                                <h5>Field : <strong>{{ $teacher->field }}</strong></h5>
+                                                                <h5>Experience :
+                                                                    <strong>{{ $teacher->experience }}</strong>
+                                                                </h5>
+                                                            </div>
+                                                        </div>
+
+                                                    </div>
+                                                    <p class="text-justify">{{ $teacher->description }}</p>
+                                                </div>
+                                            </div>
+                                            <div class="modal-footer">
+                                                <button type="button" class="btn btn-success"
+                                                    data-bs-dismiss="modal">Close</button>
+                                                <button type="button" class="btn btn-primary">Save changes</button>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
@@ -300,7 +312,7 @@
 
         {{-- Join the list section --}}
         <div class="join-list">
-            <div class="container w-40 px-5 float-start">
+            <div class="container  px-5 float-start">
                 <h2 class="join-list__heading">Join the List</h2>
                 <p class="join-list__description">Get the latest updates on new classes, free bootcamps, and more.</p>
                 <div class="join-list__form">

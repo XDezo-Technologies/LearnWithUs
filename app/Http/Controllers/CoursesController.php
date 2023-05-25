@@ -27,7 +27,8 @@ class CoursesController extends Controller
      */
     public function create()
     {
-        $files = Files::paginate(10);
+        $files = Files::paginate(12);
+
         return view('admin.Courses.create', compact('files'));
     }
 
@@ -70,7 +71,8 @@ class CoursesController extends Controller
      */
     public function show($courseID)
     {
-        $files = Files::paginate(10);
+        $files = Files::paginate(12);
+
         $courses = new Courses;
         $courses = $courses->where('courseID', $courseID)->First();
         return view('admin.Courses.show', compact('courses'), compact('files'));
@@ -84,7 +86,8 @@ class CoursesController extends Controller
      */
     public function edit($courseID)
     {
-        $files = Files::paginate(10);
+        $files = Files::paginate(12);
+
         $courses = new Courses;
         $courses = $courses->where('courseID', $courseID)->First();
         return view('admin.Courses.edit', compact('courses', 'files'));

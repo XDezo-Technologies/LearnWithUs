@@ -16,7 +16,7 @@ class FilesController extends Controller
     public function index()
     {
         $files = new Files;
-        $files = $files->paginate(4);
+        $files = $files->paginate(8);
         return view('admin.Files.index', compact('files'));
     }
 

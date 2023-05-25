@@ -1,7 +1,7 @@
 <body>
     <header>
         {{-- Navbar --}}
-        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
             <div class="container">
                 @foreach ($settings as $set)
                     @if ($set->siteKey == 'Logo')
@@ -28,7 +28,6 @@
                             </a>
                             <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                                 <a class="dropdown-item" href="{{ '/course-category' }}">Course Category</a>
-                                <a class="dropdown-item" href="{{ '/course-detail' }}">Course Detail</a>
                                 <a class="dropdown-item" href="{{ '/instructor' }}">Instructors</a>
                                 {{-- <a class="dropdown-item" href="#">Course 3</a> --}}
                             </div>

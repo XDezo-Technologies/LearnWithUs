@@ -50,18 +50,6 @@
                                     <div class="card-body">
                                         <h5 class="card-title mb-3">{{ $why->title }}</h5>
                                         <p class="card-text mb-3">{{ $why->description }}</p>
-                                        <p>
-                                            <button class="btn btn-outline-warning rounded-pill" type="button"
-                                                data-toggle="collapse" data-target="#collapseExample{{ $why->id }}"
-                                                aria-expanded="false" aria-controls="collapseExample{{ $why->id }}">
-                                                <i class="fa-solid fa-arrow-down"></i>
-                                            </button>
-                                        </p>
-                                        <div class="collapse" id="collapseExample{{ $why->id }}">
-                                            <div>
-                                                {{ $why->description2 }}
-                                            </div>
-                                        </div>
                                     </div>
                                 </div>
                             </div>
