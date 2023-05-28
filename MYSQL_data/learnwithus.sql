@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Generation Time: May 18, 2023 at 12:07 PM
+-- Generation Time: May 28, 2023 at 02:05 PM
 -- Server version: 8.0.31
 -- PHP Version: 8.0.26
 
@@ -32,11 +32,18 @@ CREATE TABLE IF NOT EXISTS `abouts` (
   `id` bigint UNSIGNED NOT NULL AUTO_INCREMENT,
   `img` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
   `title` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `description` longtext COLLATE utf8mb4_unicode_ci NOT NULL,
+  `description` varchar(251) COLLATE utf8mb4_unicode_ci NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `abouts`
+--
+
+INSERT INTO `abouts` (`id`, `img`, `title`, `description`, `created_at`, `updated_at`) VALUES
+(1, '-1685030470.jpg', 'tukuqaj@mailinator.com', 'Omnis quis quos aspe', '2023-05-25 10:48:05', '2023-05-25 10:48:05');
 
 -- --------------------------------------------------------
 
@@ -59,8 +66,8 @@ CREATE TABLE IF NOT EXISTS `abouts_features` (
 --
 
 INSERT INTO `abouts_features` (`id`, `title`, `description`, `created_at`, `updated_at`) VALUES
-(1, 'pebe@mailinator.com', 'Consequuntur repelle', '2023-05-17 07:04:11', '2023-05-17 07:04:11'),
-(2, 'jaqehidyz@mailinator.com', 'Quibusdam incididunt', '2023-05-17 07:04:17', '2023-05-17 07:04:17');
+(1, 'tapa@mailinator.com', 'Fugiat et soluta dol', '2023-05-25 10:50:32', '2023-05-25 10:50:32'),
+(2, 'dycile@mailinator.com', 'Ratione vitae distin', '2023-05-25 10:50:35', '2023-05-25 10:50:35');
 
 -- --------------------------------------------------------
 
@@ -79,24 +86,16 @@ CREATE TABLE IF NOT EXISTS `blogs` (
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=12 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Dumping data for table `blogs`
 --
 
 INSERT INTO `blogs` (`id`, `img`, `type`, `title`, `article`, `article2`, `created_at`, `updated_at`) VALUES
-(1, '-1684384237.jpg', 'news', 'kutupi@mailinator.com', 'Voluptate blanditiis', 'Atque saepe eiusmod', '2023-05-17 22:46:36', '2023-05-17 22:46:36'),
-(2, '-1684384252.jpg', 'si-fi', 'pejilicobo@mailinator.com', 'Duis neque qui eaque', 'Ullamco velit volup', '2023-05-17 22:46:49', '2023-05-17 22:46:49'),
-(3, '-1684384261.jpg', 'fedadiqa@mailinator.com', 'juticeh@mailinator.com', 'Aspernatur elit nos', 'Sint magnam non sed', '2023-05-17 22:47:01', '2023-05-17 22:47:01'),
-(4, '-1684384280.jpg', 'ronafyxop@mailinator.com', 'zaco@mailinator.com', 'Ea ea voluptatem No', 'Voluptatem officia s', '2023-05-17 23:21:07', '2023-05-17 23:21:07'),
-(5, '-1684384280.jpg', 'deholid@mailinator.com', 'homyfi@mailinator.com', 'Adipisci corrupti n', 'Quia occaecat qui do', '2023-05-17 23:23:22', '2023-05-17 23:23:22'),
-(6, '-1684384237.jpg', 'jeqifuqeqi@mailinator.com', 'xujiqava@mailinator.com', 'Enim deserunt cupida', 'Rerum accusantium en', '2023-05-17 23:23:50', '2023-05-17 23:23:50'),
-(7, '-1684384261.jpg', 'cejo@mailinator.com', 'sekid@mailinator.com', 'Ut est quasi error', 'Consequatur Minima', '2023-05-17 23:24:00', '2023-05-17 23:24:00'),
-(8, '-1684384261.jpg', 'xosiwewah@mailinator.com', 'liwofyrid@mailinator.com', 'Nisi id aspernatur n', 'Rem quos ullamco ame', '2023-05-17 23:24:28', '2023-05-17 23:24:28'),
-(9, '-1684384237.jpg', 'vuhe@mailinator.com', 'ribomahigo@mailinator.com', 'Dolore maiores tempo', 'Non et corporis fuga', '2023-05-17 23:24:46', '2023-05-17 23:24:46'),
-(10, '-1684384237.jpg', 'zihovidop@mailinator.com', 'dufakyzyv@mailinator.com', 'Voluptatem et ipsam', 'Adipisicing minim al', '2023-05-17 23:24:54', '2023-05-17 23:24:54'),
-(11, '-1684327684.jpg', 'zegi@mailinator.com', 'zehy@mailinator.com', 'Est placeat nobis l', 'Omnis do magnam Nam', '2023-05-17 23:25:48', '2023-05-17 23:25:48');
+(1, '-1685030175.jpg', 'fylel@mailinator.com', 'hyhyq@mailinator.com', 'Praesentium cupidita', 'Porro iste aute cons', '2023-05-25 10:50:10', '2023-05-25 10:50:10'),
+(2, '-1685030183.jpg', 'takycysury@mailinator.com', 'batovi@mailinator.com', 'Repudiandae mollitia', 'Rerum voluptatem au', '2023-05-25 10:50:17', '2023-05-25 10:50:17'),
+(3, '-1685030191.jpg', 'hegysujowa@mailinator.com', 'doryfimuti@mailinator.com', 'Voluptas nobis ut ve', 'Nostrum accusamus er', '2023-05-25 10:50:24', '2023-05-25 10:50:24');
 
 -- --------------------------------------------------------
 
@@ -127,20 +126,20 @@ CREATE TABLE IF NOT EXISTS `clients` (
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=9 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=8 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Dumping data for table `clients`
 --
 
 INSERT INTO `clients` (`id`, `img`, `created_at`, `updated_at`) VALUES
-(4, '-1684341614.png', '2023-05-17 10:56:04', '2023-05-17 10:56:04'),
-(2, '-1684341630.png', '2023-05-17 10:55:50', '2023-05-17 10:55:50'),
-(3, '-1684341607.png', '2023-05-17 10:55:55', '2023-05-17 10:55:55'),
-(5, '-1684341621.png', '2023-05-17 10:56:08', '2023-05-17 10:56:08'),
-(6, '-1684341636.png', '2023-05-17 10:56:28', '2023-05-17 10:56:28'),
-(7, '-1684341621.png', '2023-05-17 11:02:54', '2023-05-17 11:02:54'),
-(8, '-1684341636.png', '2023-05-17 11:03:10', '2023-05-17 11:03:10');
+(1, '-1685030251.jpg', '2023-05-25 10:19:37', '2023-05-25 10:19:37'),
+(2, '-1685030239.jpg', '2023-05-25 10:19:43', '2023-05-25 10:19:43'),
+(3, '-1685030422.jpg', '2023-05-25 10:19:49', '2023-05-25 10:19:49'),
+(4, '-1685030443.png', '2023-05-25 10:19:56', '2023-05-25 10:19:56'),
+(5, '-1685030450.png', '2023-05-25 10:20:02', '2023-05-25 10:20:02'),
+(6, '-1685030458.png', '2023-05-25 10:20:09', '2023-05-25 10:20:09'),
+(7, '-1685030463.png', '2023-05-25 10:20:15', '2023-05-25 10:20:15');
 
 -- --------------------------------------------------------
 
@@ -160,20 +159,15 @@ CREATE TABLE IF NOT EXISTS `courses` (
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`courseID`)
-) ENGINE=MyISAM AUTO_INCREMENT=8 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Dumping data for table `courses`
 --
 
 INSERT INTO `courses` (`courseID`, `img`, `title`, `price`, `time`, `description`, `description2`, `created_at`, `updated_at`) VALUES
-(1, '-1684327663.jpg', 'tijafamefa@mailinator.com', '90', '04:39', 'Qui quos similique c', 'Aute ipsa deleniti', '2023-05-17 07:05:32', '2023-05-17 07:05:32'),
-(2, '-1684384237.jpg', 'zibus@mailinator.com', '173', '22:26', 'Sint molestias laud', 'Dolorem occaecat mai', '2023-05-17 23:50:58', '2023-05-17 23:50:58'),
-(3, '-1684384252.jpg', 'verekebob@mailinator.com', '239', '19:48', 'Dolore vitae autem i', 'Nam qui esse quia to', '2023-05-17 23:51:11', '2023-05-17 23:51:11'),
-(4, '-1684384237.jpg', 'myguxel@mailinator.com', '37', '13:19', 'Dolores repudiandae', 'Magna est esse mai', '2023-05-17 23:51:26', '2023-05-17 23:51:26'),
-(5, '-1684327684.jpg', 'fusoqeses@mailinator.com', '212', '16:06', 'Impedit dolorem eaq', 'Ad occaecat porro re', '2023-05-17 23:51:34', '2023-05-17 23:51:34'),
-(6, '-1684327678.jpg', 'sotizyla@mailinator.com', '125', '01:22', 'Consequatur sit eos', 'Minus minima cupidat', '2023-05-17 23:51:45', '2023-05-17 23:51:45'),
-(7, '-1684341621.png', 'jizy@mailinator.com', '539', '15:01', 'Nobis amet occaecat', 'Dolor ea corrupti a', '2023-05-17 23:51:52', '2023-05-17 23:51:52');
+(1, '-1685030239.jpg', 'zozygafezi@mailinator.com', '101', '02:22', 'Tempor est obcaecati', 'Obcaecati praesentiu', '2023-05-25 10:48:53', '2023-05-25 10:48:53'),
+(2, '-1685030470.jpg', 'pilevaru@mailinator.com', '813', '22:05', 'Eiusmod autem asperi', 'Enim dolores delectu', '2023-05-25 10:49:14', '2023-05-25 10:49:14');
 
 -- --------------------------------------------------------
 
@@ -205,14 +199,16 @@ CREATE TABLE IF NOT EXISTS `facts` (
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Dumping data for table `facts`
 --
 
 INSERT INTO `facts` (`id`, `title`, `number`, `created_at`, `updated_at`) VALUES
-(1, 'Ipsa ea dolor volup', '871', '2023-05-17 07:04:06', '2023-05-17 07:04:06');
+(1, 'Hic totam sed in ut', '530', '2023-05-25 10:48:23', '2023-05-25 10:48:23'),
+(2, 'Facere nemo odio eu', '229', '2023-05-25 10:48:28', '2023-05-25 10:48:28'),
+(3, 'Voluptate quia lauda', '822', '2023-05-25 10:48:34', '2023-05-25 10:48:34');
 
 -- --------------------------------------------------------
 
@@ -247,27 +243,46 @@ CREATE TABLE IF NOT EXISTS `files` (
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=15 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=34 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Dumping data for table `files`
 --
 
 INSERT INTO `files` (`id`, `img`, `title`, `created_at`, `updated_at`) VALUES
-(1, '-1684341630.png', 'wejiti@mailinator.com', '2023-05-17 07:01:04', '2023-05-17 10:55:30'),
-(2, '-1684327663.jpg', 'gegow@mailinator.com', '2023-05-17 07:02:43', '2023-05-17 07:02:43'),
-(3, '-1684327678.jpg', 'ryxow@mailinator.com', '2023-05-17 07:02:58', '2023-05-17 07:02:58'),
-(4, '-1684327684.jpg', 'jutyli@mailinator.com', '2023-05-17 07:03:04', '2023-05-17 07:03:04'),
-(5, '-1684341597.png', 'pocijibyz@mailinator.com', '2023-05-17 10:54:57', '2023-05-17 10:54:57'),
-(6, '-1684341607.png', 'kehudor@mailinator.com', '2023-05-17 10:55:07', '2023-05-17 10:55:07'),
-(7, '-1684341614.png', 'semypymar@mailinator.com', '2023-05-17 10:55:14', '2023-05-17 10:55:14'),
-(8, '-1684341621.png', 'xypalacaqa@mailinator.com', '2023-05-17 10:55:21', '2023-05-17 10:55:21'),
-(9, '-1684341636.png', 'gewadowy@mailinator.com', '2023-05-17 10:55:36', '2023-05-17 10:55:36'),
-(10, '-1684384237.jpg', 'zywu@mailinator.com', '2023-05-17 22:45:37', '2023-05-17 22:45:37'),
-(11, '-1684384252.jpg', 'betib@mailinator.com', '2023-05-17 22:45:52', '2023-05-17 22:45:52'),
-(12, '-1684384261.jpg', 'suhok@mailinator.com', '2023-05-17 22:46:01', '2023-05-17 22:46:01'),
-(13, '-1684384270.jpg', 'wateqovak@mailinator.com', '2023-05-17 22:46:10', '2023-05-17 22:46:10'),
-(14, '-1684384280.jpg', 'vagajab@mailinator.com', '2023-05-17 22:46:20', '2023-05-17 22:46:20');
+(1, '-1685030175.jpg', 'xyfejokaw@mailinator.com', '2023-05-25 10:11:15', '2023-05-25 10:11:15'),
+(2, '-1685030183.jpg', 'puxuhe@mailinator.com', '2023-05-25 10:11:23', '2023-05-25 10:11:23'),
+(3, '-1685030191.jpg', 'muhixuniq@mailinator.com', '2023-05-25 10:11:31', '2023-05-25 10:11:31'),
+(4, '-1685030219.jpg', 'dekuquduho@mailinator.com', '2023-05-25 10:11:59', '2023-05-25 10:11:59'),
+(5, '-1685030231.png', 'wuzi@mailinator.com', '2023-05-25 10:12:11', '2023-05-25 10:12:11'),
+(6, '-1685030239.jpg', 'hawinop@mailinator.com', '2023-05-25 10:12:19', '2023-05-25 10:12:19'),
+(7, '-1685030251.jpg', 'cymawybyva@mailinator.com', '2023-05-25 10:12:31', '2023-05-25 10:12:31'),
+(8, '-1685030422.jpg', 'gipuk@mailinator.com', '2023-05-25 10:15:22', '2023-05-25 10:15:22'),
+(9, '-1685030432.png', 'conuzonal@mailinator.com', '2023-05-25 10:15:32', '2023-05-25 10:15:32'),
+(10, '-1685030443.png', 'byriw@mailinator.com', '2023-05-25 10:15:43', '2023-05-25 10:15:43'),
+(11, '-1685030450.png', 'dibimiq@mailinator.com', '2023-05-25 10:15:50', '2023-05-25 10:15:50'),
+(12, '-1685030458.png', 'nobim@mailinator.com', '2023-05-25 10:15:58', '2023-05-25 10:15:58'),
+(13, '-1685030463.png', 'pefobunu@mailinator.com', '2023-05-25 10:16:03', '2023-05-25 10:16:03'),
+(14, '-1685030470.jpg', 'notiv@mailinator.com', '2023-05-25 10:16:10', '2023-05-25 10:16:10'),
+(15, '-1685030477.jpg', 'fivazanixe@mailinator.com', '2023-05-25 10:16:17', '2023-05-25 10:16:17'),
+(16, '-1685030485.jpg', 'peselohobi@mailinator.com', '2023-05-25 10:16:25', '2023-05-25 10:16:25'),
+(17, '-1685030494.jpg', 'voda@mailinator.com', '2023-05-25 10:16:34', '2023-05-25 10:16:34'),
+(18, '-1685030502.jpg', 'myjyneja@mailinator.com', '2023-05-25 10:16:42', '2023-05-25 10:16:42'),
+(19, '-1685030509.jpg', 'bobim@mailinator.com', '2023-05-25 10:16:49', '2023-05-25 10:16:49'),
+(20, '-1685030519.jpg', 'neboxe@mailinator.com', '2023-05-25 10:16:59', '2023-05-25 10:16:59'),
+(21, '-1685030526.jpg', 'kuco@mailinator.com', '2023-05-25 10:17:06', '2023-05-25 10:17:06'),
+(22, '-1685030536.jpg', 'rutysow@mailinator.com', '2023-05-25 10:17:16', '2023-05-25 10:17:16'),
+(23, '-1685030543.jpg', 'qusesamoba@mailinator.com', '2023-05-25 10:17:23', '2023-05-25 10:17:23'),
+(24, '-1685030549.jpg', 'fodyzipe@mailinator.com', '2023-05-25 10:17:29', '2023-05-25 10:17:29'),
+(25, '-1685030555.jpg', 'cuquboc@mailinator.com', '2023-05-25 10:17:35', '2023-05-25 10:17:35'),
+(26, '-1685030567.png', 'sapacuty@mailinator.com', '2023-05-25 10:17:47', '2023-05-25 10:17:47'),
+(27, '-1685030573.png', 'jebocozet@mailinator.com', '2023-05-25 10:17:53', '2023-05-25 10:17:53'),
+(28, '-1685030579.png', 'hehuxod@mailinator.com', '2023-05-25 10:17:59', '2023-05-25 10:17:59'),
+(29, '-1685030586.png', 'cozutuh@mailinator.com', '2023-05-25 10:18:06', '2023-05-25 10:18:06'),
+(30, '-1685030595.png', 'fidu@mailinator.com', '2023-05-25 10:18:15', '2023-05-25 10:18:15'),
+(31, '-1685030603.png', 'quvut@mailinator.com', '2023-05-25 10:18:23', '2023-05-25 10:18:23'),
+(32, '-1685030609.png', 'belujacyce@mailinator.com', '2023-05-25 10:18:29', '2023-05-25 10:18:29'),
+(33, '-1685030615.png', 'lowe@mailinator.com', '2023-05-25 10:18:35', '2023-05-25 10:18:35');
 
 -- --------------------------------------------------------
 
@@ -346,14 +361,7 @@ CREATE TABLE IF NOT EXISTS `orders` (
   PRIMARY KEY (`id`),
   KEY `orders_userid_index` (`userID`),
   KEY `orders_courseid_index` (`courseID`)
-) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-
---
--- Dumping data for table `orders`
---
-
-INSERT INTO `orders` (`id`, `userID`, `name`, `email`, `product_id`, `courseID`, `amount`, `esewa_status`, `created_at`, `updated_at`) VALUES
-(2, 1, 'Simone Erickson', 'admin1@gmail.com', '6464cea9c83bb', 1, '90', 'verified', '2023-05-17 07:10:05', '2023-05-17 07:11:05');
+) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- --------------------------------------------------------
 
@@ -406,7 +414,25 @@ CREATE TABLE IF NOT EXISTS `settings` (
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=13 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `settings`
+--
+
+INSERT INTO `settings` (`id`, `siteKey`, `siteValue`, `created_at`, `updated_at`) VALUES
+(1, 'Logo', '-1685030231.png', '2023-05-25 10:52:00', '2023-05-25 10:52:00'),
+(2, 'partner1', 'Minima doloribus nob', '2023-05-25 10:56:06', '2023-05-25 10:56:06'),
+(3, 'partner2', 'Enim est fuga Labor', '2023-05-25 10:56:18', '2023-05-25 10:56:18'),
+(4, 'partner3', 'Omnis aut voluptatem', '2023-05-25 10:56:26', '2023-05-25 10:56:26'),
+(5, 'Gmail', 'sdwasd@gmil.com', '2023-05-25 10:58:19', '2023-05-25 10:58:19'),
+(6, 'Tel_no', '061-224433', '2023-05-25 10:58:46', '2023-05-25 10:58:46'),
+(7, 'Phone', '9806630977', '2023-05-25 10:59:00', '2023-05-27 08:23:01'),
+(8, 'facebook_site', 'https://www.facebook.com/', '2023-05-25 11:01:29', '2023-05-25 11:01:29'),
+(9, 'twitter_site', 'https://www.twitter.com/', '2023-05-25 11:03:13', '2023-05-25 11:03:13'),
+(10, 'instagram_site', 'https://www.instagram.com/', '2023-05-25 11:05:59', '2023-05-25 11:05:59'),
+(11, 'copyright', 'Lorem quis reiciendi', '2023-05-25 11:07:47', '2023-05-25 11:07:47'),
+(12, 'whyChooseUsDesc', 'Recusandae Iure est Lorem ipsum dolor sit amet consectetur, adipisicing elit. Iste, veritatis.', '2023-05-27 08:11:52', '2023-05-27 08:11:52');
 
 -- --------------------------------------------------------
 
@@ -423,14 +449,14 @@ CREATE TABLE IF NOT EXISTS `sliders` (
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Dumping data for table `sliders`
 --
 
 INSERT INTO `sliders` (`id`, `img`, `title`, `description`, `created_at`, `updated_at`) VALUES
-(2, '-1684327663.jpg', 'hefepoba@mailinator.com', 'Cillum libero numqua', '2023-05-17 22:32:30', '2023-05-17 22:39:40');
+(1, '-1685030219.jpg', 'vobefaveg@mailinator.com', 'Laborum Est enim q', '2023-05-25 10:21:23', '2023-05-25 10:21:23');
 
 -- --------------------------------------------------------
 
@@ -453,15 +479,17 @@ CREATE TABLE IF NOT EXISTS `teachers` (
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`teacherID`)
-) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Dumping data for table `teachers`
 --
 
 INSERT INTO `teachers` (`teacherID`, `img`, `name`, `post`, `field`, `experience`, `description`, `facebook`, `twitter`, `linkedIn`, `created_at`, `updated_at`) VALUES
-(1, '-1684327564.png', 'wyvi@mailinator.com', 'neguj@mailinator.com', 'tuge@mailinator.com', 'cixoz@mailinator.com', 'dodevuxi@mailinator.com', 'cisehe@mailinator.com', 'xuhyfazen@mailinator.com', 'mawyqo@mailinator.com', '2023-05-17 07:01:14', '2023-05-17 07:01:14'),
-(2, '-1684327684.jpg', 'tugitox@mailinator.com', 'haken@mailinator.com', 'dune@mailinator.com', 'nykig@mailinator.com', 'pivyfofok@mailinator.com', 'xoreho@mailinator.com', 'vajaluw@mailinator.com', 'kelytiji@mailinator.com', '2023-05-17 07:35:49', '2023-05-17 07:35:49');
+(1, '-1685030477.jpg', 'fami@mailinator.com', 'mazidabete@mailinator.com', 'lupenas@mailinator.com', 'meqad@mailinator.com', 'bedewepe@mailinator.com', 'cyzyxyzuge@mailinator.com', 'syvabunud@mailinator.com', 'qyjo@mailinator.com', '2023-05-25 10:49:27', '2023-05-25 10:49:27'),
+(2, '-1685030509.jpg', 'celejyz@mailinator.com', 'hygy@mailinator.com', 'wuzadycywe@mailinator.com', 'qalehi@mailinator.com', 'poba@mailinator.com', 'rowyguxy@mailinator.com', 'tesyjuzo@mailinator.com', 'dybopewe@mailinator.com', '2023-05-25 10:49:39', '2023-05-25 10:49:39'),
+(3, '-1685030502.jpg', 'cesi@mailinator.com', 'vequ@mailinator.com', 'qybyfoged@mailinator.com', 'hyhe@mailinator.com', 'hotyw@mailinator.com', 'kuzukovi@mailinator.com', 'dekojowu@mailinator.com', 'jobomexovy@mailinator.com', '2023-05-25 10:49:50', '2023-05-25 10:49:50'),
+(4, '-1685030526.jpg', 'hevezila@mailinator.com', 'byzedygi@mailinator.com', 'terawer@mailinator.com', 'gonadop@mailinator.com', 'cevyc@mailinator.com', 'jigiquxo@mailinator.com', 'hynawycor@mailinator.com', 'nobyfefid@mailinator.com', '2023-05-25 10:50:02', '2023-05-25 10:50:02');
 
 -- --------------------------------------------------------
 
@@ -480,16 +508,7 @@ CREATE TABLE IF NOT EXISTS `testimonials` (
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-
---
--- Dumping data for table `testimonials`
---
-
-INSERT INTO `testimonials` (`id`, `img`, `name`, `star`, `post`, `message`, `created_at`, `updated_at`) VALUES
-(1, '-1684327678.jpg', 'midipeh@mailinator.com', '5', 'bomykypir@mailinator.com', 'Qui ipsam est provi', '2023-05-17 07:03:15', '2023-05-17 07:03:15'),
-(2, '-1684327684.jpg', 'nocu@mailinator.com', '2', 'wyjydo@mailinator.com', 'Error qui aut eius e', '2023-05-17 07:03:24', '2023-05-17 07:03:24'),
-(3, '-1684327678.jpg', 'hycon@mailinator.com', '1', 'zykyxovo@mailinator.com', 'Molestias mollit sit', '2023-05-17 08:04:31', '2023-05-17 08:04:31');
+) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- --------------------------------------------------------
 
@@ -512,15 +531,14 @@ CREATE TABLE IF NOT EXISTS `users` (
   `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `users_email_unique` (`email`)
-) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Dumping data for table `users`
 --
 
 INSERT INTO `users` (`id`, `name`, `address`, `phone`, `email`, `role`, `email_verified_at`, `password`, `remember_token`, `created_at`, `updated_at`) VALUES
-(1, 'Simone Erickson', 'Dolor proident et a', '+1 (884) 438-3113', 'admin1@gmail.com', 1, NULL, '$2y$10$EuxV1GLu1fSEKwxveA4xk.2G7vIPwA3jubYHt.5/LhbY71aXEjmeu', NULL, '2023-05-17 06:57:12', '2023-05-17 06:57:12'),
-(2, 'Wayne Snider', 'Sunt explicabo Iste', '+1 (831) 294-3728', 'user1@gmail.com', 0, NULL, '$2y$10$kEnxnP5KWQniIBCh9ZvrQuQrR0MEJz/eYbvC8Vgy.ApoKv3yefBty', NULL, '2023-05-17 07:21:45', '2023-05-17 07:21:45');
+(1, 'Kylie Stout', 'Mollitia in consecte', '+1 (508) 694-3369', 'admin1@gmail.com', 1, NULL, '$2y$10$MDDRZS/YZ9QTlry6ZzcJcuz0tlURrx/NlHyLM0br.xG8oSexQ.C76', NULL, '2023-05-25 09:44:49', '2023-05-25 09:44:49');
 
 -- --------------------------------------------------------
 
@@ -534,19 +552,19 @@ CREATE TABLE IF NOT EXISTS `why_choose_us` (
   `logo` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
   `title` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
   `description` longtext COLLATE utf8mb4_unicode_ci NOT NULL,
-  `description2` longtext COLLATE utf8mb4_unicode_ci NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=MyISAM AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=MyISAM AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Dumping data for table `why_choose_us`
 --
 
-INSERT INTO `why_choose_us` (`id`, `logo`, `title`, `description`, `description2`, `created_at`, `updated_at`) VALUES
-(1, 'pafe@mailinator.com', 'totura@mailinator.com', 'Iste cupiditate nihi', 'Ipsum perspiciatis', '2023-05-17 07:03:56', '2023-05-17 07:03:56'),
-(2, 'pywe@mailinator.com', 'fagifyvoh@mailinator.com', 'Eos dolore doloremq', 'Aut non aut sunt cu', '2023-05-17 07:04:01', '2023-05-17 07:04:01');
+INSERT INTO `why_choose_us` (`id`, `logo`, `title`, `description`, `created_at`, `updated_at`) VALUES
+(1, 'fa-regular fa-user', 'dujosupaf@mailinator.com', 'Officia et qui quia', '2023-05-25 10:37:57', '2023-05-25 10:37:57'),
+(2, 'fa-solid fa-gear', 'zimetyly@mailinator.com', 'Qui qui vitae dolore', '2023-05-25 10:38:05', '2023-05-25 10:38:05'),
+(3, 'fa-solid fa-gear', 'vywi@mailinator.com', 'Accusantium officia', '2023-05-25 10:38:14', '2023-05-25 10:38:14');
 
 -- --------------------------------------------------------
 
@@ -564,14 +582,7 @@ CREATE TABLE IF NOT EXISTS `wishlists` (
   PRIMARY KEY (`id`),
   KEY `wishlists_userid_index` (`userID`),
   KEY `wishlists_courseid_index` (`courseID`)
-) ENGINE=MyISAM AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-
---
--- Dumping data for table `wishlists`
---
-
-INSERT INTO `wishlists` (`id`, `userID`, `courseID`, `created_at`, `updated_at`) VALUES
-(1, 1, 1, '2023-05-17 07:05:39', '2023-05-17 07:05:39');
+) ENGINE=MyISAM DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

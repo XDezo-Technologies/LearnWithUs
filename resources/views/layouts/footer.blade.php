@@ -65,9 +65,11 @@
          <div class="row">
              <div class="col-md-6">
                  <div class="copyright">
-                     @if ($set->siteKey == 'copyright')
-                         <span>&copy; {{ $set->siteValue }}</span>
-                     @endif
+                     @foreach ($settings as $set)
+                         @if ($set->siteKey == 'copyright')
+                             <span>&copy; {{ $set->siteValue }}</span>
+                         @endif
+                     @endforeach
                  </div>
              </div>
              <div class="col-md-6">

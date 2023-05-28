@@ -35,10 +35,11 @@
             <div id="why-choose-us" class="py-5">
                 <div class="container">
                     <h2 class="text-center mb-5">Why Choose Us?</h2>
-                    <p class="lead text-center mb-5">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-                        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
-                        exercitation ullamco laboris.</p>
-
+                    @foreach ($settings as $set)
+                        @if ($set->siteKey == 'whyChooseUsDesc')
+                            <p class="lead text-center mb-5">{{ $set->siteValue }}</p>
+                        @endif
+                    @endforeach
                     <div class="row">
                         @foreach ($whyChooseUs as $why)
                             <div class="col-md-4 mb-4">
